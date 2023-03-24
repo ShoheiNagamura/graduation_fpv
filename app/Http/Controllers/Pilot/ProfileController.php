@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Pilot;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -10,26 +11,24 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
 
-
 class ProfileController extends Controller
 {
     /**
-     * Display the user's profile form.
+     * パイロットのプロフィール内容を表示
      */
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
+        return view('pilot/profile.edit', [
             'user' => $request->user(),
         ]);
     }
 
     /**
-     * Update the user's profile information.
+     * プロフィールの更新処理
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        Log::debug($request);
-
+        Log::debug('p');
 
         $request->user()->fill($request->validated());
 
@@ -39,11 +38,11 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'プロフィールを更新しました。');
+        return Redirect::route('pilot/profile.edit')->with('status', 'プロフィールを更新しました。');
     }
 
     /**
-     * Delete the user's account.
+     * アカウントの削除処理
      */
     public function destroy(Request $request): RedirectResponse
     {

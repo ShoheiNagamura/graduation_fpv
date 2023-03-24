@@ -7,6 +7,8 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use App\Http\Controllers\Pilot\Auth\AuthenticatedSessionController;
+
 class RedirectIfAuthenticated
 {
     /**
@@ -22,8 +24,12 @@ class RedirectIfAuthenticated
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
+            // if (Auth::guard($guard)->check()) {
+            //     return redirect(RouteServiceProvider::HOME);
+            // }
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                if ($guard == 'pilot') return redirect(RouteServiceProvider::PILOT_HOME); // 追加
+                return redirect(RouteServiceProvider::PILOT_HOME);
             }
         }
 
