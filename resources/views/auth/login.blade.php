@@ -10,14 +10,14 @@
             <p style="color:white">一般ユーザー</p>
         </div>
         <div>
-            <x-input-label for="email" :value="__('Email')" />
+            <x-input-label for="email" :value="__('メールアドレス')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+            <x-input-label for="password" :value="__('パスワード')" />
 
             <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
 
@@ -35,12 +35,14 @@
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
             <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                {{ __('Forgot your password?') }}
+                <!-- {{ __('Forgot your password?') }} -->
+                {{ __('パスワードをお忘れですか？') }}
             </a>
             @endif
 
             <x-primary-button class="ml-3">
-                {{ __('Log in') }}
+                <!-- {{ __('Log in') }} -->
+                {{ __('サインイン') }}
             </x-primary-button>
         </div>
     </form>
