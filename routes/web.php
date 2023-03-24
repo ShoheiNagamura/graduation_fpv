@@ -29,7 +29,7 @@ Route::get('/dashboard', function () {
 
 
 
-// 一般ユーザー認証でのルーティング
+// 一般ユーザー認証用ルーティング
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -40,7 +40,7 @@ require __DIR__ . '/auth.php';
 
 
 
-// パイロットユーザーでのルーティング
+// パイロットユーザー用ルーティング
 Route::prefix('pilot')->name('pilot.')->group(function () {
     Route::get('/dashboard', function () {
         return view('pilot.dashboard');

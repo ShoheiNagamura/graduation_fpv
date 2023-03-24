@@ -28,8 +28,6 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        Log::debug('p');
-
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
@@ -38,7 +36,7 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('pilot/profile.edit')->with('status', 'プロフィールを更新しました。');
+        return Redirect::route('pilot.profile.edit')->with('status', 'プロフィールを更新しました。');
     }
 
     /**

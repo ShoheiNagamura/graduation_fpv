@@ -28,8 +28,6 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        Log::debug($request);
-
 
         $request->user()->fill($request->validated());
 
