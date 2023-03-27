@@ -25,6 +25,12 @@ class Pilot extends Authenticatable
     }
 
 
+    public function shooting_plans()
+    {
+        return $this->hasMany(ShootingPlan::class);
+    }
+
+
 
     /**
      * The attributes that are mass assignable.

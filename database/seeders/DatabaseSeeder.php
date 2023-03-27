@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use app\Models\Portfolio;
 use app\Models\ReferencePlan;
 use App\Models\Pilot;
+use App\Models\ShootingPlan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -37,6 +38,7 @@ class DatabaseSeeder extends Seeder
         Pilot::factory()->count(10)->create()->each(function ($pilot) {
             $pilot->portfolios()->saveMany(Portfolio::factory()->count(3)->create(['pilot_id' => $pilot->id]));
             $pilot->reference_plans()->saveMany(ReferencePlan::factory()->count(2)->create(['pilot_id' => $pilot->id]));
+            $pilot->shooting_plans()->saveMany(ShootingPlan::factory()->count(1)->create(['pilot_id' => $pilot->id]));
         });
     }
 }
