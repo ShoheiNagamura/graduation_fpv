@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use app\Models\Portfolio;
+use App\Models\Pilot;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,6 +25,16 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         //Pilotテーブル用
-        \App\Models\Pilot::factory(10)->create();
+        // \App\Models\Pilot::factory(10)->create();
+
+
+        //Portfolioテーブル用
+        // \App\Models\Portfolio::factory(10)->create();
+
+
+        //PilotとPortfolioを紐づけてデータを作成
+        Pilot::factory()->count(10)->create()->each(function ($pilot) {
+            $pilot->portfolios()->saveMany(Portfolio::factory()->count(3)->create(['pilot_id' => $pilot->id]));
+        });
     }
 }
