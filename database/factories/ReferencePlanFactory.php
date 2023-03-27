@@ -2,13 +2,15 @@
 
 namespace Database\Factories;
 
-use app\Models\Pilot;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+use App\Models\Pilot;
+
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Portfolio>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ReferencePlan>
  */
-class PortfolioFactory extends Factory
+class ReferencePlanFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -22,7 +24,8 @@ class PortfolioFactory extends Factory
             'pilot_id' => function () {
                 return Pilot::factory()->create()->id;
             },
-            'portfolio_url' => fake()->imageUrl(), //追記
+            'plan_name' => Str::random(10),
+            'plan_fee' => fake()->numberBetween($min = 1000, $max = 100000),
         ];
     }
 }

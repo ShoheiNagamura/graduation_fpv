@@ -18,6 +18,14 @@ class Pilot extends Authenticatable
         return $this->hasMany(Portfolio::class);
     }
 
+
+    public function reference_plans()
+    {
+        return $this->hasMany(ReferencePlan::class);
+    }
+
+
+
     /**
      * The attributes that are mass assignable.
      *
