@@ -10,12 +10,13 @@ use Laravel\Sanctum\HasApiTokens;
 
 class Pilot extends Authenticatable
 {
-
-
     use HasApiTokens, HasFactory, Notifiable;
 
 
-
+    public function portfolios()
+    {
+        return $this->hasMany(Portfolio::class);
+    }
 
     /**
      * The attributes that are mass assignable.
