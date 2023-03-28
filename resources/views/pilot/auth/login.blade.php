@@ -7,7 +7,7 @@
 
         <!-- Email Address -->
         <div>
-            <p style="color:white">パイロット</p>
+            <h2 style="color:white">パイロット</h2>
         </div>
         <div>
             <x-input-label for="email" :value="__('メールアドレス')" />
@@ -38,6 +38,10 @@
                 {{ __('パスワードお忘れですか?') }}
             </a>
             @endif
+
+            <x-top-back-button>
+                {{ __('戻る') }}
+            </x-top-back-button>
 
             <x-primary-button class="ml-3">
                 {{ __('サインイン') }}

@@ -407,7 +407,7 @@
             @endauth
 
             <!-- パイロット用 -->
-            @auth
+            @auth('pilot')
             <a href="{{ url('pilot/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
             @else
             <a href="{{ route('pilot.login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">パイロットログイン</a>
@@ -418,8 +418,6 @@
             @endauth
         </div>
         @endif
-
-
     </div>
 </body>
 

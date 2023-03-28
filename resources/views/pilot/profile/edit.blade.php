@@ -1,5 +1,5 @@
 <!-- //パイロット -->
-
+<!-- pilot/partials/ディレクトリの中から読み込んでいる -->
 <x-pilot-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
