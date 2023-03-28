@@ -1,4 +1,5 @@
 <!-- 一般ユーザー -->
+<!--/partials/ディレクトリの中から読み込んでいる -->
 
 <x-app-layout>
     <x-slot name="header">

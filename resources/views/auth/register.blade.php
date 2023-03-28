@@ -4,7 +4,7 @@
 
         <!-- Name -->
         <div>
-            <p style="color:white">一般ユーザー</p>
+            <h2 style="color:white">一般ユーザー</h2>
         </div>
 
         <div>
@@ -43,6 +43,10 @@
                 <!-- {{ __('Already registered?') }} -->
                 {{ __('サインインはこちら') }}
             </a>
+
+            <x-top-back-button>
+                {{ __('戻る') }}
+            </x-top-back-button>
 
             <x-primary-button class="ml-4">
                 {{ __('サインアップ') }}
