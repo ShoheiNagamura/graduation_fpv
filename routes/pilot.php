@@ -35,6 +35,8 @@ Route::middleware('guest')->group(function () {
         ->name('password.store');
 });
 
+
+//パイロットユーザーでの認証時に使われるルーティング
 Route::middleware('auth:pilot')->group(function () {
     Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])
         ->name('verification.notice');

@@ -397,7 +397,7 @@
 
             <!-- 一般ユーザー用 -->
             @auth
-            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ダッシュボード</a>
             @else
             <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">一般ログイン</a>
 
@@ -408,7 +408,7 @@
 
             <!-- パイロット用 -->
             @auth('pilot')
-            <a href="{{ url('pilot/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+            <a href="{{ url('pilot/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ダッシュボード</a>
             @else
             <a href="{{ route('pilot.login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">パイロットログイン</a>
 
