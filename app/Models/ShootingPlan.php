@@ -9,9 +9,17 @@ class ShootingPlan extends Model
 {
     use HasFactory;
 
+    // 多対1
     public function pilot()
     {
         return $this->belongsTo(Pilot::class);
+    }
+
+
+    // 受注管理機能リレーション 多対多
+    public function pilot_orders()
+    {
+        return $this->belongsToMany(Role::class, 'pilot_orders', 'shooting_plan_id', 'user_id');
     }
 
 

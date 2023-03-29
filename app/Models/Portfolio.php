@@ -9,7 +9,7 @@ class Portfolio extends Model
 {
     use HasFactory;
 
-
+    // 多対1
     public function pilot()
     {
         return $this->belongsTo(Pilot::class);
