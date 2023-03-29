@@ -35,6 +35,9 @@ Route::middleware('guest')->group(function () {
         ->name('password.store');
 });
 
+
+
+//一般ユーザーでの認証時に使われるルーティング
 Route::middleware('auth')->group(function () {
     Route::get('verify-email', EmailVerificationPromptController::class)
         ->name('verification.notice');
