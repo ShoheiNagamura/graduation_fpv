@@ -12,22 +12,35 @@ class Pilot extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-
+    // 1対多
     public function portfolios()
     {
         return $this->hasMany(Portfolio::class);
     }
 
-
+    // 1対多
     public function reference_plans()
     {
         return $this->hasMany(ReferencePlan::class);
     }
 
-
+    // 1対多
     public function shooting_plans()
     {
         return $this->hasMany(ShootingPlan::class);
+    }
+
+    // いいね機能リレーション 多対多
+    public function pilot_likes()
+    {
+        return $this->belongsToMany(Role::class, 'pilot_likes', 'pilot_id', 'user_id');
+    }
+
+
+    // チャット機能リレーション 多対多
+    public function user_chats()
+    {
+        return $this->belongsToMany(Role::class, 'user_chats', 'pilot_id', 'user_id');
     }
 
 
@@ -40,6 +53,11 @@ class Pilot extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'user_image',
+        'age',
+        'work_area',
+        'message_pr',
+        'achievement',
         'password',
     ];
 

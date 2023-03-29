@@ -12,6 +12,29 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+
+
+
+    // いいね機能リレーション 多対多
+    public function pilot_likes()
+    {
+        return $this->belongsToMany(Role::class, 'pilot_likes', 'user_id', 'pilot_id');
+    }
+
+    // チャット機能リレーション 多対多
+    public function user_chats()
+    {
+        return $this->belongsToMany(Role::class, 'user_chats', 'user_id', 'pilot_id');
+    }
+
+    // 受注管理機能リレーション 多対多
+    public function pilot_orders()
+    {
+        return $this->belongsToMany(Role::class, 'pilot_orders', 'user_id', 'shooting_plan_id');
+    }
+
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -20,6 +43,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'user_image',
+        'age',
         'password',
     ];
 
