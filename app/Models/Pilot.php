@@ -40,6 +40,11 @@ class Pilot extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'user_image',
+        'age',
+        'work_area',
+        'message_pr',
+        'achievement',
         'password',
     ];
 

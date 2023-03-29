@@ -14,4 +14,10 @@ class Portfolio extends Model
     {
         return $this->belongsTo(Pilot::class);
     }
+
+
+
+    protected $fillable = [
+        'portfolio_url',
+    ];
 }

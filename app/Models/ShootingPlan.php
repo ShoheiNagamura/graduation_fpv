@@ -13,4 +13,14 @@ class ShootingPlan extends Model
     {
         return $this->belongsTo(Pilot::class);
     }
+
+
+    protected $fillable = [
+        'plan_name',
+        'plan_detail',
+        'plan_fee',
+        'application_date',
+        'shooting_date',
+        'delivery_date'
+    ];
 }
