@@ -22,7 +22,7 @@ class ShootingPlan extends Model
         return $this->belongsToMany(Role::class, 'pilot_orders', 'shooting_plan_id', 'user_id');
     }
 
-
+    // 変更可能
     protected $fillable = [
         'plan_name',
         'plan_detail',

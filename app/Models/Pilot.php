@@ -50,6 +50,8 @@ class Pilot extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    //  変更可能
     protected $fillable = [
         'name',
         'email',

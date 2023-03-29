@@ -16,7 +16,7 @@ class Portfolio extends Model
     }
 
 
-
+    // 変更可能
     protected $fillable = [
         'portfolio_url',
     ];
