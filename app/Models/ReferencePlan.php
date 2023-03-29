@@ -15,7 +15,7 @@ class ReferencePlan extends Model
         return $this->belongsTo(Pilot::class);
     }
 
-
+    // 変更可能
     protected $fillable = [
         'plan_name',
         'plan_fee',
