@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('pilot.dashboard')" :active="request()->routeIs('pilot.dashboard')">
-                        {{ __('Dashboard（パイロット）') }}
+                        {{ __('パイロット一覧') }}
                     </x-nav-link>
                 </div>
 
