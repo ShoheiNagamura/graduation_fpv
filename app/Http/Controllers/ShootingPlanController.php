@@ -13,7 +13,7 @@ class ShootingPlanController extends Controller
     // 登録済み一覧画面 ----------------------------
     public function index()
     {
-        //
+        return view('shooting_plan.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class ShootingPlanController extends Controller
     // プラン登録画面 ---------------------------------
     public function create()
     {
-        //
+        return view('shooting_plan.create');
     }
 
     /**
