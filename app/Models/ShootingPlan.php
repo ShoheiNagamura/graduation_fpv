@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class ShootingPlan extends Model
+{
+    use HasFactory;
+
+    // 多対1
+    public function pilot()
+    {
+        return $this->belongsTo(Pilot::class);
+    }
+
+
+    // 受注管理機能リレーション 多対多
+    public function pilot_orders()
+    {
+        return $this->belongsToMany(Role::class, 'pilot_orders', 'shooting_plan_id', 'user_id');
+    }
+
+    // 変更可能
+    protected $fillable = [
+        'plan_name',
+        'plan_detail',
+        'plan_fee',
+        'application_date',
+        'shooting_date',
+        'delivery_date'
+    ];
+}

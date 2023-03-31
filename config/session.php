@@ -128,8 +128,9 @@ return [
 
     'cookie' => env(
         'SESSION_COOKIE',
-        Str::slug(env('APP_NAME', 'laravel'), '_').'_session'
+        Str::slug(env('APP_NAME', 'graduation_fpv'), '_') . '_session'
     ),
+    'cookie_pilot' => Str::slug(env('APP_NAME', 'graduation_fpv'), '_') . '_session_pilot', // 追加
 
     /*
     |--------------------------------------------------------------------------

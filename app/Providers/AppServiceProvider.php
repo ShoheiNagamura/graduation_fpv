@@ -24,5 +24,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        if (request()->is('pilot/*')) {
+            config(['session.cookie' => config('session.cookie_pilot')]);
+        }
     }
 }
