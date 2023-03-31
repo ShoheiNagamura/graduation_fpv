@@ -26,7 +26,7 @@
                                         <p>{{$plan->plan_detail}}</p>
                                     </div> -->
                                     <div>
-                                        <p>{{$plan->plan_fee}}</p>
+                                        <p>{{number_format($plan->plan_fee)}}</p>
                                     </div>
                                     <div>
                                         <p>{{$plan->application_date}}</p>
