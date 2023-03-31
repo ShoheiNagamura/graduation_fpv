@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ShootingPlanController;
 
-Route::resource('shooting_plan', ShootingPlanController::class);
 
 // トップページ
 Route::get('/', function () {
@@ -43,6 +42,9 @@ Route::prefix('pilot')->name('pilot.')->group(function () {
         Route::patch('/profile', [ProfilePilotController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfilePilotController::class, 'destroy'])->name('profile.destroy');
     });
+
+    Route::resource('shooting_plan', ShootingPlanController::class);
+
 
     require __DIR__ . '/pilot.php';
 });
