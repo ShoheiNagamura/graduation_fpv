@@ -37,6 +37,12 @@
                                     <div>
                                         <p>{{$plan->delivery_date}}</p>
                                     </div>
+                                    <!-- <a href="{{ route('pilot.shooting_plan.show',$plan->id) }}">
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{$plan->plan_name}}</h3>
+                                    </a> -->
+                                    <a href="{{ route('pilot.shooting_plan.show',$plan->id) }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                        詳細
+                                    </a>
                                     <div class="flex">
                                         <!-- 更新ボタン -->
                                         <!-- 削除ボタン -->

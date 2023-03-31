@@ -73,7 +73,8 @@ class ShootingPlanController extends Controller
     //  プラン詳細画面 -----------------------------------------
     public function show($id)
     {
-        //
+        $plan = ShootingPlan::find($id);
+        return view('shooting_plan.show', compact('plan'));
     }
 
     /**
