@@ -9,6 +9,23 @@ class ShootingPlan extends Model
 {
     use HasFactory;
 
+    protected $guarded = [
+        'id',
+        'created_at',
+        'updated_at',
+    ];
+
+    // 変更可能
+    protected $fillable = [
+        'pilot_id',
+        'plan_name',
+        'plan_detail',
+        'plan_fee',
+        'application_date',
+        'shooting_date',
+        'delivery_date'
+    ];
+
     // 多対1
     public function pilot()
     {
@@ -21,14 +38,4 @@ class ShootingPlan extends Model
     {
         return $this->belongsToMany(Role::class, 'pilot_orders', 'shooting_plan_id', 'user_id');
     }
-
-    // 変更可能
-    protected $fillable = [
-        'plan_name',
-        'plan_detail',
-        'plan_fee',
-        'application_date',
-        'shooting_date',
-        'delivery_date'
-    ];
 }
