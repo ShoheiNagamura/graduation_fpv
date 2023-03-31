@@ -6,7 +6,9 @@ use App\Http\Controllers\Pilot\ProfileController as ProfilePilotController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ShootingPlanController;
 
+Route::resource('shooting_plan', ShootingPlanController::class);
 
 // トップページ
 Route::get('/', function () {
