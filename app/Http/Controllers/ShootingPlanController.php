@@ -16,7 +16,7 @@ class ShootingPlanController extends Controller
     // 登録済み一覧画面 --------------------------------------------
     public function index()
     {
-        $plans = ShootingPlan::all();
+        $plans = ShootingPlan::getAllOrderByUpdated_at();
         return view('shooting_plan.index', compact('plans'));
     }
 
@@ -73,7 +73,8 @@ class ShootingPlanController extends Controller
     //  プラン詳細画面 -----------------------------------------
     public function show($id)
     {
-        //
+        $plan = ShootingPlan::find($id);
+        return view('shooting_plan.show', compact('plan'));
     }
 
     /**
