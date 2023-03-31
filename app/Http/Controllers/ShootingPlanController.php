@@ -13,7 +13,7 @@ class ShootingPlanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // 登録済み一覧画面 ----------------------------
+    // 登録済み一覧画面 --------------------------------------------
     public function index()
     {
         $plans = ShootingPlan::all();
@@ -24,7 +24,7 @@ class ShootingPlanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // プラン登録画面 ---------------------------------
+    // プラン登録画面 ----------------------------------------------
     public function create()
     {
         return view('shooting_plan.create');
@@ -47,18 +47,19 @@ class ShootingPlanController extends Controller
             'shooting_date' => 'required|date',
             'delivery_date' => 'required|date',
         ]);
-        // バリデーション:エラー
+        // バリデーションに引っかかった場合実行される
         if ($validator->fails()) {
             return redirect()
                 ->route('shooting_plan.create')
                 ->withInput()
                 ->withErrors($validator);
         }
+
+        session()->flash('success', '新しいプランが作成されました。');
         // create()は最初から用意されている関数
         // 戻り値は挿入されたレコードの情報
         $data = $request->merge(['pilot_id' => Auth::user()->id])->all();
         $result = ShootingPlan::create($data);
-        // ルーティング「todo.index」にリクエスト送信（一覧ページに移動）
         return redirect()->route('pilot.shooting_plan.index');
     }
 
@@ -69,7 +70,7 @@ class ShootingPlanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //  プラン詳細画面 ------------------------------------
+    //  プラン詳細画面 -----------------------------------------
     public function show($id)
     {
         //
@@ -80,7 +81,7 @@ class ShootingPlanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // プラン編集画面 -------------------------------------
+    // プラン編集画面 ------------------------------------------
     public function edit($id)
     {
         //
@@ -92,7 +93,7 @@ class ShootingPlanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // ------------------------------------------------
+    // ------------------------------------------------------
     public function update(Request $request, $id)
     {
         //
@@ -103,7 +104,7 @@ class ShootingPlanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //-----------------------------------------------------
+    //------------------------------------------------------
     public function destroy($id)
     {
         //
