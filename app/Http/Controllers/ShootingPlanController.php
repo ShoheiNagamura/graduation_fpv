@@ -41,7 +41,7 @@ class ShootingPlanController extends Controller
         // バリデーション
         $validator = Validator::make($request->all(), [
             'plan_name' => 'required|max:255',
-            'plan_detail' => 'required',
+            'plan_detail' => 'required | max:500',
             'plan_fee' => 'required|integer',
             'application_date' => 'required|date',
             'shooting_date' => 'required|date',
