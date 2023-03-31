@@ -3,8 +3,8 @@
 use App\Http\Controllers\Pilot\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Pilot\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Pilot\Auth\EmailVerificationNotificationController;
-use App\Http\Controllers\Pilot\Auth\EmailVerificationPromptController;
-use App\Http\Controllers\Pilot\Auth\NewPasswordController;
+use App\Http\Controllers\Pilot\Auth\PilotEmailVerificationPromptController;
+use App\Http\Controllers\Pilot\Auth\PilotNewPasswordController;
 use App\Http\Controllers\Pilot\Auth\PasswordController;
 use App\Http\Controllers\Pilot\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Pilot\Auth\RegisteredUserController;
@@ -28,17 +28,17 @@ Route::middleware('guest')->group(function () {
     Route::post('forgot-password', [PasswordResetLinkController::class, 'store'])
         ->name('password.email');
 
-    Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])
+    Route::get('reset-password/{token}', [PilotNewPasswordController::class, 'create'])
         ->name('password.reset');
 
-    Route::post('reset-password', [NewPasswordController::class, 'store'])
+    Route::post('reset-password', [PilotNewPasswordController::class, 'store'])
         ->name('password.store');
 });
 
 
 //パイロットユーザーでの認証時に使われるルーティング
 Route::middleware('auth:pilot')->group(function () {
-    Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])
+    Route::get('verify-email', [PilotEmailVerificationPromptController::class, '__invoke'])
         ->name('verification.notice');
 
     Route::get('verify-email/{id}/{hash}', [VerifyEmailController::class, '__invoke'])
