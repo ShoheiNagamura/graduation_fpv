@@ -108,6 +108,7 @@ class ShootingPlanController extends Controller
     //------------------------------------------------------
     public function destroy($id)
     {
-        //
+        $result = ShootingPlan::find($id)->delete();
+        return redirect()->route('pilot.shooting_plan.index');
     }
 }
