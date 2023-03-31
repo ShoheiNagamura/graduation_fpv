@@ -19,7 +19,7 @@
                             @foreach ($plans as $plan)
                             <tr class="hover:bg-grey-lighter">
                                 <td class="py-4 px-6 border-b border-grey-light">
-                                    <h3 class="text-left font-bold text-lg text-grey-dark">{{$plan->plan}}</h3>
+                                    <h3 class="text-left font-bold text-lg text-grey-dark">{{$plan->plan_name}}</h3>
                                     <div class="flex">
                                         <!-- 更新ボタン -->
                                         <!-- 削除ボタン -->
