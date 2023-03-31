@@ -41,9 +41,10 @@ Route::prefix('pilot')->name('pilot.')->group(function () {
         Route::get('/profile', [ProfilePilotController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfilePilotController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfilePilotController::class, 'destroy'])->name('profile.destroy');
+
+        Route::resource('shooting_plan', ShootingPlanController::class);
     });
 
-    Route::resource('shooting_plan', ShootingPlanController::class);
 
 
     require __DIR__ . '/pilot.php';
