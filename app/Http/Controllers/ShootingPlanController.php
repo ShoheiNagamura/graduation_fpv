@@ -14,17 +14,23 @@ class ShootingPlanController extends Controller
      */
 
     // 登録済み一覧画面 --------------------------------------------
-    public function index()
+    public function index(Request $request)
     {
-        $plans = ShootingPlan::getAllOrderByUpdated_at();
-        return view('shooting_plan.index', compact('plans'));
+        // ログインユーザーのIDを取得
+        $userId = $request->user()->id;
+
+        // ログインユーザーの発注用プランを取得
+        $plans = ShootingPlan::where('pilot_id', $userId)->get();
+
+        // ビューにデータを渡す
+        return view('shooting_plan.index', ['plans' => $plans]);
     }
 
     /**
      * @return \Illuminate\Http\Response
      */
 
-    // プラン登録画面 ----------------------------------------------
+    // プラン登録画面遷移 ----------------------------------------------
     public function create()
     {
         return view('shooting_plan.create');
@@ -34,6 +40,9 @@ class ShootingPlanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
+
 
     //プランの登録処理-----------------------------------------------
     public function store(Request $request)
@@ -65,6 +74,7 @@ class ShootingPlanController extends Controller
 
 
 
+
     /**
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -82,6 +92,9 @@ class ShootingPlanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+
+
+
     // プラン編集画面 ------------------------------------------
     public function edit($id)
     {
@@ -95,7 +108,10 @@ class ShootingPlanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // ------------------------------------------------------
+
+
+
+    // プラン更新 ------------------------------------------------------
     public function update(Request $request, $id)
     {
         // バリデーション
@@ -124,7 +140,10 @@ class ShootingPlanController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    //------------------------------------------------------
+
+
+
+    //プラン削除機能------------------------------------------------------
     public function destroy($id)
     {
         $result = ShootingPlan::find($id)->delete();
