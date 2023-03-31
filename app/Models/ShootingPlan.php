@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ShootingPlan extends Model
 {
     use HasFactory;
-
+    // 変更されない
     protected $guarded = [
         'id',
         'created_at',

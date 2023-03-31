@@ -42,6 +42,8 @@ Route::prefix('pilot')->name('pilot.')->group(function () {
         Route::patch('/profile', [ProfilePilotController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfilePilotController::class, 'destroy'])->name('profile.destroy');
 
+
+        //発注用プランのルーティング
         Route::resource('shooting_plan', ShootingPlanController::class);
     });
 
