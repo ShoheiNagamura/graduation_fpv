@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\ShootingPlan;
 use Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Pagination\Paginator;
+
 
 class ShootingPlanController extends Controller
 {
@@ -20,7 +22,7 @@ class ShootingPlanController extends Controller
         $userId = $request->user()->id;
 
         // ログインユーザーの発注用プランを取得
-        $plans = ShootingPlan::where('pilot_id', $userId)->get();
+        $plans = ShootingPlan::where('pilot_id', $userId)->paginate(3);
 
         // ビューにデータを渡す
         return view('shooting_plan.index', ['plans' => $plans]);
