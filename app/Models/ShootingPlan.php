@@ -26,6 +26,12 @@ class ShootingPlan extends Model
         'delivery_date'
     ];
 
+
+    public static function getAllOrderByUpdated_at()
+    {
+        return self::orderBy('updated_at', 'desc')->get();
+    }
+
     // 多対1
     public function pilot()
     {
