@@ -13,7 +13,8 @@ class ShootingPlanController extends Controller
     // 登録済み一覧画面 ----------------------------
     public function index()
     {
-        return view('shooting_plan.index');
+        $plans = [];
+        return view('shooting_plan.index', compact('plans'));
     }
 
     /**
