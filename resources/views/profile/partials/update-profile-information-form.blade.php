@@ -13,9 +13,23 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
+
+        <!-- <div class="col-md-6">
+            @if ($user->user_image)
+            <img src="{{ asset('storage/images/' . $user->user_image) }}" alt="{{ $user->name }}" class="img-thumbnail" width="200">
+            @else
+            <p>{{ __('No image uploaded.') }}</p>
+            @endif
+        </div> -->
+
+        <!-- <div>
+            <x-input-label for="user_image" :value="__('画像')" />
+            <x-text-input id="user_image" name="user_image" type="file" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
+
+        </div> -->
 
         <div>
             <x-input-label for="name" :value="__('お名前')" />
@@ -27,6 +41,13 @@
             <x-input-label for="email" :value="__('メールアドレス')" />
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
+
+
+            <x-input-label class="mt-4" for="age" :value="__('年齢')" />
+            <x-text-input id="age" name="age" type="number" class="mt-1 block w-full" :value="old('age', $user->age)" required autocomplete="age" />
+
+
+
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
             <div>

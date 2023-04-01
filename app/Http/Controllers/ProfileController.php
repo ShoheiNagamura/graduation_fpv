@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Storage;
 
 
 class ProfileController extends Controller
@@ -34,6 +35,19 @@ class ProfileController extends Controller
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
+
+        // // ユーザー画像がアップロードされた場合
+        // if ($request->hasFile('image')) {
+        //     // ファイル名の生成
+        //     $fileName = md5(time()) . '.' . $request->file('image')->getClientOriginalExtension();
+        //     // 画像の保存
+        //     $request->file('image')->storeAs('public/images', $fileName);
+        //     // ユーザーの画像パスを更新
+        //     $request->user()->update([
+        //         // 'user_image' => 'storage/app/public/images' . $fileName,
+        //         'user_image' => 'public/images/' . $fileName,
+        //     ]);
+        // }
 
         $request->user()->save();
 
