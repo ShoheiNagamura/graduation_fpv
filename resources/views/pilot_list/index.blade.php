@@ -1,6 +1,6 @@
 <!-- //カラムにtype追加判定に使う -->
 
-@if (isset($user->work_area))
+@if ($user->type === 1)
 
 <x-pilot-layout>
     <x-slot name="header">
@@ -46,7 +46,7 @@
     </div>
 </x-pilot-layout>
 
-@else
+@elseif($user->type === 0)
 
 <x-app-layout>
     <x-slot name="header">
