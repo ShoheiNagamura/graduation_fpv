@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('pilots', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('type')->default(1);
             $table->string('email')->unique();
             $table->string('user_image')->nullable(); //ユーザー画像（追記）
             $table->integer('age')->nullable(); //年齢（追記）
