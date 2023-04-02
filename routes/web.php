@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ShootingPlanController;
+use App\Http\Controllers\PortfolioController;
 
 
 // トップページ
@@ -45,6 +46,9 @@ Route::prefix('pilot')->name('pilot.')->group(function () {
 
         //発注用プランのルーティング
         Route::resource('shooting_plan', ShootingPlanController::class);
+
+        // ポートフォリオ用
+        Route::resource('portfolio', PortfolioController::class);
     });
 
 
