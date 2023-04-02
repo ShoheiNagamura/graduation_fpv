@@ -34,6 +34,13 @@
             <x-input-label class="mt-4" for="work_area" :value="__('活動拠点')" />
             <x-select-input id="work_area" name="work_area" class="mt-1 block w-full" :value="old('work_area', $user->work_area)" required autocomplete="work_area" />
 
+            <x-input-label class="mt-4" for="message_pr" :value="__('PR Message')" />
+            <!-- <x-textarea-input id="message_pr" name="message_pr" class="mt-1 block w-full" :value="old('message_pr', $user->message_pr)" required autocomplete="message_pr" /> -->
+            <textarea name="message_pr" id="message_pr" cols="70" rows="10" class='border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm'>{{ old('message_pr', $user->message_pr ?? '') }}</textarea>
+
+            <x-input-label class="mt-4" for="achievement" :value="__('実績')" />
+            <textarea name="achievement" id="achievement" cols="70" rows="10" class='border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm'>{{ old('achievement', $user->achievement ?? '') }}</textarea>
+
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
             <div>
