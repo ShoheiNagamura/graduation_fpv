@@ -28,9 +28,11 @@
             <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
-
             <x-input-label class="mt-4" for="age" :value="__('年齢')" />
             <x-text-input id="age" name="age" type="number" class="mt-1 block w-full" :value="old('age', $user->age)" required autocomplete="age" />
+
+            <x-input-label class="mt-4" for="work_area" :value="__('活動拠点')" />
+            <x-select-input id="work_area" name="work_area" class="mt-1 block w-full" :value="old('work_area', $user->work_area)" required autocomplete="work_area" />
 
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
