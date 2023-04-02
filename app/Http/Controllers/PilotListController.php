@@ -25,7 +25,6 @@ class PilotListController extends Controller
      */
     public function create()
     {
-        return view('pilot_list.create');
     }
 
     /**
@@ -47,7 +46,9 @@ class PilotListController extends Controller
      */
     public function show($id)
     {
-        return view('tweet.create');
+        $pilot = Pilot::with(['pilotPortfolios', 'pilotShootingPlans'])->find($id);
+
+        return view('pilot_list.show', compact('pilot'));
     }
 
     /**
