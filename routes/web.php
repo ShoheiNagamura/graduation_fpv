@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ShootingPlanController;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\PilotListController;
 
 
 // トップページ
@@ -26,6 +27,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+
+    //パイロットリスト
+    Route::resource('pilot_list', PilotListController::class);
 });
 
 require __DIR__ . '/auth.php';
@@ -43,6 +48,8 @@ Route::prefix('pilot')->name('pilot.')->group(function () {
         Route::patch('/profile', [ProfilePilotController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfilePilotController::class, 'destroy'])->name('profile.destroy');
 
+        //パイロットリスト
+        Route::resource('pilot_list', PilotListController::class);
 
         //発注用プランのルーティング
         Route::resource('shooting_plan', ShootingPlanController::class);
