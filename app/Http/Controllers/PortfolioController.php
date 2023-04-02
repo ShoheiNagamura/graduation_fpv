@@ -119,6 +119,12 @@ class PortfolioController extends Controller
                 ->withInput()
                 ->withErrors($validator);
         }
+
+        // iframeで読み込めないため、対応できるよう書き換える
+        $url = $request['portfolio_url'];
+        $converted_url = str_replace('https://youtu.be/', 'https://www.youtube.com/embed/', $url);
+        $request['portfolio_url'] = $converted_url;
+
         //データ更新処理
         $result = Portfolio::find($id)->update($request->all());
         return redirect()->route('pilot.portfolio.index');
