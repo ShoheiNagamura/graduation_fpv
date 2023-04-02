@@ -44,7 +44,7 @@
 
 
             <x-input-label class="mt-4" for="age" :value="__('年齢')" />
-            <x-text-input id="age" name="age" type="number" class="mt-1 block w-full" :value="old('age', $user->age)" required autocomplete="age" />
+            <x-text-input id="age" name="age" type="number" class="mt-1 block w-full" :value="old('age', $user->age)" />
 
 
 
