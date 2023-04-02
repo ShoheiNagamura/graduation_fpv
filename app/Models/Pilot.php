@@ -13,19 +13,19 @@ class Pilot extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     // 1対多
-    public function portfolios()
+    public function pilotPortfolios()
     {
         return $this->hasMany(Portfolio::class);
     }
 
     // 1対多
-    public function reference_plans()
+    public function pilotReferencePlans()
     {
         return $this->hasMany(ReferencePlan::class);
     }
 
     // 1対多
-    public function shooting_plans()
+    public function pilotShootingPlans()
     {
         return $this->hasMany(ShootingPlan::class);
     }
