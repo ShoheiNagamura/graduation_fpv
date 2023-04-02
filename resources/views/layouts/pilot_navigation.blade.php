@@ -25,13 +25,7 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('pilot.shooting_plan.index')" :active="request()->routeIs('pilot.shooting_plan.index')">
-                        {{ __('登録済みプラン') }}
-                    </x-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('pilot.shooting_plan.create')" :active="request()->routeIs('pilot.shooting_plan.create')">
-                        {{ __('プラン作成') }}
+                        {{ __('プラン') }}
                     </x-nav-link>
                 </div>
 
@@ -40,13 +34,6 @@
                         {{ __('ポートフォリオ') }}
                     </x-nav-link>
                 </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('pilot.portfolio.create')" :active="request()->routeIs('pilot.portfolio.create')">
-                        {{ __('ポートフォリオ作成') }}
-                    </x-nav-link>
-                </div>
-
             </div>
 
             <!-- Settings Dropdown -->
