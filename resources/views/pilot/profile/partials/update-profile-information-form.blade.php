@@ -36,10 +36,10 @@
 
             <x-input-label class="mt-4" for="message_pr" :value="__('PR Message')" />
             <!-- <x-textarea-input id="message_pr" name="message_pr" class="mt-1 block w-full" :value="old('message_pr', $user->message_pr)" required autocomplete="message_pr" /> -->
-            <textarea name="message_pr" id="message_pr" cols="70" rows="10" class='border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm'>{{ old('message_pr', $user->message_pr ?? '') }}</textarea>
+            <textarea name="message_pr" id="message_pr" cols="70" rows="10" placeholder="PRしたいことなどご自由にご記載ください(500文字以内)" class='border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm'>{{ old('message_pr', $user->message_pr ?? '') }}</textarea>
 
             <x-input-label class="mt-4" for="achievement" :value="__('実績')" />
-            <textarea name="achievement" id="achievement" cols="70" rows="10" class='border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm'>{{ old('achievement', $user->achievement ?? '') }}</textarea>
+            <textarea name="achievement" id="achievement" cols="70" rows="10" placeholder="今までの活動や実績をご記載ください(500文字以内)" class='border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm'>{{ old('achievement', $user->achievement ?? '') }}</textarea>
 
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
