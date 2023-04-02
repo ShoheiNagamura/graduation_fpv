@@ -34,6 +34,9 @@ class ProfileController extends Controller
             $request->user()->email_verified_at = null;
         }
 
+        // ddd($request);
+        // die();
+
         $request->user()->save();
 
         return Redirect::route('pilot.profile.edit')->with('status', 'プロフィールを更新しました。');
