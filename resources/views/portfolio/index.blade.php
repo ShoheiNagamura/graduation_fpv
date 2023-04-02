@@ -16,7 +16,7 @@
                     <table class="text-center w-full border-collapse">
                         <thead>
                             <tr>
-                                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">登録済みプラン一覧</th>
+                                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">ポートフォリオ一覧</th>
                             </tr>
                         </thead>
 
@@ -24,9 +24,6 @@
                             @foreach ($portfolios as $portfolio)
                             <tr class="hover:bg-grey-lighter">
                                 <td class="py-4 px-6 border-b border-grey-light">
-                                    <div>
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{$portfolio->portfolio_url}}</h3>
-                                    </div>
 
                                     <iframe width="560" height="315" src="{{ $portfolio->portfolio_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
