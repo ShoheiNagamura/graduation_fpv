@@ -22,7 +22,8 @@ class PortfolioFactory extends Factory
             'pilot_id' => function () {
                 return Pilot::factory()->create()->id;
             },
-            'portfolio_url' => fake()->imageUrl(), //追記
+            // 'portfolio_url' => fake()->imageUrl(), //追記
+            'portfolio_url' => 'https://www.youtube.com/embed/yyTD2J0G4H0', //追記
         ];
     }
 }

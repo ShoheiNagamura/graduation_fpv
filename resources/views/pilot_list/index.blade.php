@@ -25,6 +25,9 @@
                                     <div>
                                         <h3 class="text-left font-bold text-lg text-grey-dark">撮影者：{{$pilot->name}}({{$pilot->age}})</h3>
                                     </div>
+                                    <a href="{{ route('pilot.pilot_list.show',$pilot->id) }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                        詳細
+                                    </a>
                                     @endforeach
                                 </td>
                             </tr>
