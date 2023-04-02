@@ -52,8 +52,8 @@ class PilotListController extends Controller
     public function show($id)
     {
         $pilot = Pilot::with(['pilotPortfolios', 'pilotShootingPlans'])->find($id);
-
-        return view('pilot_list.show', compact('pilot'));
+        $user = Auth::user();
+        return view('pilot_list.show', compact('pilot', 'user'));
     }
 
     /**
