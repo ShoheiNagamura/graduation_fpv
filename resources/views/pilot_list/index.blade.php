@@ -13,8 +13,8 @@
 
     <div class="py-4">
         <div class="max-w-7xl mx-auto">
-            <div class="overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-2 bg-white border-b border-gray-200">
+            <div class="overflow-hidden shadow-sm sm:rounded-sm">
+                <div class="p-2 bg-black border-b border-gray-200">
                     <table class="text-center w-full border-collapse">
                         <!-- <div>
                             <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-center text-grey-dark border-b border-grey-light">作品（パイロットリスト）</th>
@@ -26,11 +26,13 @@
                                 <div class="p-2 flex-1">
                                     <iframe width="395" height="225" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     <div>
-                                        <h3 class="text-left mt-4 font-bold text-lg text-grey-dark">撮影者：{{$pilot->name}}({{$pilot->age}})</h3>
+                                        <h3 class="text-left mt-4 font-bold text-lg text-gray-200">撮影者：{{$pilot->name}}({{$pilot->age}})</h3>
                                     </div>
-                                    <a href="{{ route('pilot.pilot_list.show',$pilot->id) }}" class="block text-center w-full py-3 mt-6 mb-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
-                                        →
-                                    </a>
+                                    <div class="p-4">
+                                        <a href="{{ route('pilot.pilot_list.show',$pilot->id) }}" class="rounded-lg text-center py-2 px-8 font-medium text-black bg-gray-100 shadow-lg focus:outline-none hover:bg-gray-300 hover:shadow-none">
+                                            →
+                                        </a>
+                                    </div>
                                 </div>
                                 @endforeach
                             </td>
@@ -56,8 +58,8 @@
 
     <div class="py-4">
         <div class="max-w-7xl mx-auto">
-            <div class="overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-2 bg-white border-b border-gray-200">
+            <div class="overflow-hidden shadow-sm sm:rounded-sm">
+                <div class="p-2 bg-black border-b border-gray-200">
                     <table class="text-center w-full border-collapse">
                         <!-- <div>
                             <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-center text-grey-dark border-b border-grey-light">作品（パイロットリスト）</th>
@@ -69,11 +71,13 @@
                                 <div class="p-2 flex-1">
                                     <iframe width="395" height="225" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     <div>
-                                        <h3 class="text-left mt-4 font-bold text-lg text-grey-dark">撮影者：{{$pilot->name}}({{$pilot->age}})</h3>
+                                        <h3 class="text-left mt-4 font-bold text-lg text-gray-200">撮影者：{{$pilot->name}}({{$pilot->age}})</h3>
                                     </div>
-                                    <a href="{{ route('pilot_list.show',$pilot->id) }}" class="block text-center w-full py-3 mt-6 mb-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
-                                        →
-                                    </a>
+                                    <div class="p-4">
+                                        <a href="{{ route('pilot_list.show',$pilot->id) }}" class="rounded-lg text-center py-2 px-8 font-medium text-black bg-gray-100 shadow-lg focus:outline-none hover:bg-gray-300 hover:shadow-none">
+                                            →
+                                        </a>
+                                    </div>
                                 </div>
                                 @endforeach
                             </td>
