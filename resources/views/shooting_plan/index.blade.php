@@ -23,22 +23,23 @@
                             <tr class="hover:bg-grey-lighter">
                                 <td class="py-4 px-6 border-b border-grey-light">
                                     <div>
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{$plan->plan_name}}</h3>
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">ID:{{$plan->id}}</h3>
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">案件名:{{$plan->plan_name}}</h3>
                                     </div>
                                     <!-- <div>
                                         <p>{{$plan->plan_detail}}</p>
                                     </div> -->
                                     <div>
-                                        <p>{{number_format($plan->plan_fee)}}</p>
+                                        <p>報酬 : ￥{{number_format($plan->plan_fee)}}</p>
                                     </div>
                                     <div>
-                                        <p>{{$plan->application_date}}</p>
+                                        <p>申込日 : {{$plan->application_date}}</p>
                                     </div>
                                     <div>
-                                        <p>{{$plan->shooting_date}}</p>
+                                        <p>撮影実施日 : {{$plan->shooting_date}}</p>
                                     </div>
                                     <div>
-                                        <p>{{$plan->delivery_date}}</p>
+                                        <p>納品日 : {{$plan->delivery_date}}</p>
                                     </div>
                                     <!-- <a href="{{ route('pilot.shooting_plan.show',$plan->id) }}">
                                         <h3 class="text-left font-bold text-lg text-grey-dark">{{$plan->plan_name}}</h3>
