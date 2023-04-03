@@ -1,5 +1,7 @@
 <!-- //カラムにtype追加判定に使う -->
 
+
+<!-- パイロットユーザー -->
 @if ($user->type === 1)
 
 <x-pilot-layout>
@@ -27,9 +29,9 @@
                                     @foreach ($pilot->pilotPortfolios as $portfolio)
                                     <iframe width="560" height="315" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     <div>
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">撮影者：{{$pilot->name}}({{$pilot->age}})</h3>
+                                        <h3 class="text-left mt-4 font-bold text-lg text-grey-dark">撮影者：{{$pilot->name}}({{$pilot->age}})</h3>
                                     </div>
-                                    <a href="{{ route('pilot.pilot_list.show',$pilot->id) }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                    <a href="{{ route('pilot.pilot_list.show',$pilot->id) }}" class="block text-center w-full py-3 mt-6 mb-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                                         詳細
                                     </a>
                                     @endforeach
@@ -46,6 +48,7 @@
     </div>
 </x-pilot-layout>
 
+<!-- 一般ユーザー -->
 @elseif($user->type === 0)
 
 <x-app-layout>
@@ -72,10 +75,10 @@
                                 <td class="py-4 px-6 border-b border-grey-light">
                                     @foreach ($pilot->pilotPortfolios as $portfolio)
                                     <iframe width="560" height="315" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                    <div>
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">撮影者：{{$pilot->name}}({{$pilot->age}})</h3>
+                                    <div class="mb-4">
+                                        <h3 class="text-left mt-4 font-bold text-lg text-grey-dark">撮影者：{{$pilot->name}}({{$pilot->age}})</h3>
                                     </div>
-                                    <a href="{{ route('pilot_list.show',$pilot->id) }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                    <a href="{{ route('pilot_list.show',$pilot->id) }}" class="block text-center w-full py-3 mt-4 mb-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                                         詳しくはこちら
                                     </a>
                                     @endforeach
