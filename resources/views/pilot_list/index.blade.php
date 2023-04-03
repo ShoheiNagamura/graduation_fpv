@@ -13,7 +13,7 @@
 
     <div class="py-4">
         <div class="max-w-7xl mx-auto">
-            <div class="overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="overflow-hidden shadow-sm sm:rounded-sm">
                 <div class="p-2 bg-white border-b border-gray-200">
                     <table class="text-center w-full border-collapse">
                         <!-- <div>
@@ -28,8 +28,8 @@
                                     <div>
                                         <h3 class="text-left mt-4 font-bold text-lg text-grey-dark">撮影者：{{$pilot->name}}({{$pilot->age}})</h3>
                                     </div>
-                                    <div class="">
-                                        <a href="{{ route('pilot.pilot_list.show',$pilot->id) }}" class="block text-center w-full py-3 mt-6 mb-6 font-medium text-white bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                    <div class="p-4">
+                                        <a href="{{ route('pilot.pilot_list.show',$pilot->id) }}" class="rounded-lg text-center py-2 px-8 font-medium text-white bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                                             →
                                         </a>
                                     </div>
@@ -58,7 +58,7 @@
 
     <div class="py-4">
         <div class="max-w-7xl mx-auto">
-            <div class="overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="overflow-hidden shadow-sm sm:rounded-sm">
                 <div class="p-2 bg-white border-b border-gray-200">
                     <table class="text-center w-full border-collapse">
                         <!-- <div>
@@ -73,9 +73,14 @@
                                     <div>
                                         <h3 class="text-left mt-4 font-bold text-lg text-grey-dark">撮影者：{{$pilot->name}}({{$pilot->age}})</h3>
                                     </div>
-                                    <a href="{{ route('pilot_list.show',$pilot->id) }}" class="block text-center w-full py-3 mt-6 mb-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                    <!-- <a href="{{ route('pilot_list.show',$pilot->id) }}" class="block rounded-lg text-center w-full py-3 mt-6 mb-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                                         →
-                                    </a>
+                                    </a> -->
+                                    <div class="p-4">
+                                        <a href="{{ route('pilot.pilot_list.show',$pilot->id) }}" class="rounded-lg text-center py-2 px-8 font-medium text-white bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                            →
+                                        </a>
+                                    </div>
                                 </div>
                                 @endforeach
                             </td>
