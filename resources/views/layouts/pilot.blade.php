@@ -17,7 +17,7 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen bg-gray-100 dark:bg-gray-800">
         @include('layouts.pilot_navigation')
 
 
@@ -31,7 +31,7 @@
         @endif
 
         <!-- Page Content -->
-        <main>
+        <main class="bg-black">
             {{ $slot }}
         </main>
     </div>
