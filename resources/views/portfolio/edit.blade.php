@@ -19,7 +19,7 @@
                                     @method('put')
                                     @csrf
                                     <div class=" flex flex-col mb-4">
-                                        <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="portfolio_url">{{ __('ポートフォリオURL') }}</label>
+                                        <label class="mb-2 uppercase font-bold text-lg text-grey-darkest" for="portfolio_url">{{ __('ポートフォリオURL(YouTube)') }}</label>
                                         <input class="border py-2 px-3 text-grey-darkest" id="portfolio_url" type="text" class="form-control @error('portfolio_url') is-invalid @enderror" name="portfolio_url" value="{{ $portfolio->portfolio_url }}" required autocomplete="portfolio_url" autofocus>
                                         <!-- //バリデーションエラー -->
                                         @error('plan_name')
