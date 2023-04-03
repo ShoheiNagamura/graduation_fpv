@@ -16,13 +16,13 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="text-center w-full border-collapse">
-                        <th>
-                            <tr>
+                        <div>
+                            <div>
                                 <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">パイロットリスト</th>
-                            </tr>
-                        </th>
+                            </div>
+                        </div>
 
-                        <tbody>
+                        <div>
                             @foreach ($pilots as $pilot)
                             <tr class="hover:bg-grey-lighter">
                                 <td class="py-4 px-6 border-b border-grey-light">
@@ -39,7 +39,7 @@
                             </tr>
                             @endforeach
 
-                        </tbody>
+                        </div>
                         {{ $pilots->links() }}
                     </table>
                 </div>
