@@ -1,7 +1,7 @@
 <x-pilot-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Create New Tweet') }}
+        <h2 class="text-white font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('新しいポートフォリオを登録') }}
         </h2>
     </x-slot>
 
