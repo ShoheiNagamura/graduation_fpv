@@ -1,7 +1,7 @@
 <x-pilot-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Tweet Index') }}
+        <h2 class="text-white font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('登録済みプラン') }}
         </h2>
     </x-slot>
 
@@ -13,11 +13,11 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="text-center w-full border-collapse">
-                        <thead>
+                        <!-- <thead>
                             <tr>
                                 <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">登録済みプラン一覧</th>
                             </tr>
-                        </thead>
+                        </thead> -->
                         <tbody>
                             @foreach ($plans as $plan)
                             <tr class="hover:bg-grey-lighter">

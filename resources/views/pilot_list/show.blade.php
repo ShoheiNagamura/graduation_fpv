@@ -4,8 +4,8 @@
 @if ($user->type === 1)
 <x-pilot-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Show Tweet Detail') }}
+        <h2 class="text-white font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('パイロットの詳細') }}
         </h2>
     </x-slot>
 
@@ -41,8 +41,8 @@
 
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Show Tweet Detail') }}
+        <h2 class="text-white font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('パイロットの詳細') }}
         </h2>
     </x-slot>
 
