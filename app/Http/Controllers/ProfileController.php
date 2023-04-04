@@ -15,7 +15,7 @@ use App\Http\Controllers\Storage;
 class ProfileController extends Controller
 {
     /**
-     * Display the user's profile form.
+     * Display the user's profile form.-----------------------------------------------------
      */
     public function edit(Request $request): View
     {
@@ -25,7 +25,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Update the user's profile information.
+     * Update the user's profile information. ------------------------------------------------
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
@@ -36,18 +36,7 @@ class ProfileController extends Controller
             $request->user()->email_verified_at = null;
         }
 
-        // // ユーザー画像がアップロードされた場合
-        // if ($request->hasFile('image')) {
-        //     // ファイル名の生成
-        //     $fileName = md5(time()) . '.' . $request->file('image')->getClientOriginalExtension();
-        //     // 画像の保存
-        //     $request->file('image')->storeAs('public/images', $fileName);
-        //     // ユーザーの画像パスを更新
-        //     $request->user()->update([
-        //         // 'user_image' => 'storage/app/public/images' . $fileName,
-        //         'user_image' => 'public/images/' . $fileName,
-        //     ]);
-        // }
+
 
         $request->user()->save();
 
@@ -55,7 +44,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Delete the user's account.
+     * Delete the user's account. -------------------------------------------------------------
      */
     public function destroy(Request $request): RedirectResponse
     {
