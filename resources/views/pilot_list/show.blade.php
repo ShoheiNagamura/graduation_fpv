@@ -17,10 +17,15 @@
                         <div class="mb-8">
                             <h2 class="mb-6 uppercase font-bold text-center text-grey-darkest">パイロット詳細</h2>
                             <div>
-                                <h3 class="text-left font-bold text-lg text-grey-dark">お名前：{{$pilot->name}}({{$pilot->age}})</h3>
-                                <h3 class="text-left font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</h3>
+                                <h3 class="text-left mb-4 font-bold text-lg text-grey-dark">お名前：{{$pilot->name}}({{$pilot->age}})</h3>
+                                <h3 class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</h3>
+                                <h3 class="text-left font-bold text-lg text-grey-dark">PRメッセージ</h3>
+                                <p class="text-lg mb-4"> {{$pilot->message_pr}}</p>
+                                <h3 class="text-left font-bold text-lg text-grey-dark">実績</h3>
+                                <p class="text-lg mb-6">{{$pilot->message_pr}}</p>
                             </div>
 
+                            <h2 class="mb-6 uppercase font-bold text-center text-grey-darkest">作品</h2>
                             <div class="flex mt-6">
                                 @foreach ($pilot->pilotPortfolios as $portfolio)
                                 <div class="flex-1"><iframe width="400" height="245" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
@@ -89,8 +94,12 @@
                         <div class="mb-4">
                             <h2 class="mb-6 uppercase font-bold text-center text-grey-darkest">パイロット詳細</h2>
                             <div>
-                                <h3 class="text-left font-bold text-lg text-grey-dark">お名前：{{$pilot->name}}({{$pilot->age}})</h3>
-                                <h3 class="text-left font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</h3>
+                                <h3 class="text-left mb-4 font-bold text-lg text-grey-dark">お名前：{{$pilot->name}}({{$pilot->age}})</h3>
+                                <h3 class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</h3>
+                                <h3 class="text-left font-bold text-lg text-grey-dark">PRメッセージ</h3>
+                                <p class="text-lg mb-4"> {{$pilot->message_pr}}</p>
+                                <h3 class="text-left font-bold text-lg text-grey-dark">実績</h3>
+                                <p class="text-lg mb-6">{{$pilot->message_pr}}</p>
                             </div>
 
                             <div class="flex mt-6">
