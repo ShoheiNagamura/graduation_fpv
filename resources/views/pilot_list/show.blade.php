@@ -27,6 +27,39 @@
                                 @endforeach
                             </div>
                         </div>
+
+
+                        <h2 class="mb-4 uppercase font-bold text-lg text-grey-darkest">プラン一覧</h2>
+
+                        @foreach ($pilot->pilotShootingPlans as $ShootingPlans)
+                        <tr class="hover:bg-grey-lighter">
+                            <td class="py-4 px-6 border-b border-grey-light">
+
+                                <div>
+                                    <div>
+                                        <h4 class="text-left font-bold text-lg text-grey-dark">ID : {{$ShootingPlans->id}}</h4>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{$ShootingPlans->plan_name}}</h3>
+                                    </div>
+                                    <div>
+                                        <p>{{number_format($ShootingPlans->plan_fee)}}</p>
+                                    </div>
+                                    <div>
+                                        <p>{{$ShootingPlans->application_date}}</p>
+                                    </div>
+                                    <div>
+                                        <p>{{$ShootingPlans->shooting_date}}</p>
+                                    </div>
+                                    <div>
+                                        <p>{{$ShootingPlans->delivery_date}}</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        @endforeach
+
+
                         <a href="{{ url()->previous() }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                             戻る
                         </a>
@@ -76,6 +109,9 @@
 
                                 <div>
                                     <div>
+                                        <h4 class="text-left font-bold text-lg text-grey-dark">ID : {{$ShootingPlans->id}}</h4>
+                                    </div>
+                                    <div>
                                         <h3 class="text-left font-bold text-lg text-grey-dark">{{$ShootingPlans->plan_name}}</h3>
                                     </div>
                                     <div>
@@ -100,7 +136,7 @@
 
 
                         <a href="{{ url()->previous() }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
-                            Back
+                            戻る
                         </a>
                     </div>
                 </div>
