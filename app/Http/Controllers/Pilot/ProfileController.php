@@ -24,7 +24,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * プロフィールの更新処理
+     * プロフィールの更新処理 ------------------------------------------------------------------
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
@@ -43,7 +43,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * アカウントの削除処理
+     * アカウントの削除処理 -------------------------------------------------------------------
      */
     public function destroy(Request $request): RedirectResponse
     {
