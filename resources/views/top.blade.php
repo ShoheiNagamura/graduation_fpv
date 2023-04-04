@@ -396,7 +396,7 @@
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
 
             <!-- 一般ユーザー用 -->
-            @auth
+            <!-- @auth
             <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ダッシュボード</a>
             @else
             <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">一般ログイン</a>
@@ -404,10 +404,10 @@
             @if (Route::has('register'))
             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">一般新規登録</a>
             @endif
-            @endauth
+            @endauth -->
 
             <!-- パイロット用 -->
-            @auth('pilot')
+            <!-- @auth('pilot')
             <a href="{{ url('pilot/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ダッシュボード</a>
             @else
             <a href="{{ route('pilot.login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">パイロットログイン</a>
@@ -415,6 +415,24 @@
             @if (Route::has('register'))
             <a href="{{ route('pilot.register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">パイロット新規登録</a>
             @endif
+            @endauth -->
+
+
+
+            <!-- 一般ユーザー用 -->
+            @auth
+            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ダッシュボード</a>
+            @else
+            <a href="{{ route('login') }}" class="font-medium text-gray-700 dark:text-gray-500 underline">ログイン</a>
+
+            @if (Route::has('register'))
+            <a href="{{ route('register') }}" class="ml-4 font-medium text-gray-700 dark:text-gray-500 underline">新規登録</a>
+            @endif
+            @endauth
+
+            <!-- パイロット用 -->
+            @auth('pilot')
+            <a href="{{ url('pilot/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ダッシュボード</a>
             @endauth
         </div>
         @endif
