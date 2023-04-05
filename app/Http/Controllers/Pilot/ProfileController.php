@@ -28,19 +28,16 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
+        Log::debug($request);
         try {
             $request->user()->fill($request->validated());
-            // dd($request);
 
             if ($request->user()->isDirty('email')) {
                 $request->user()->email_verified_at = null;
             }
 
-            // ddd($request);
-            // die();
-
             $request->user()->save();
-            Log::debug($request);
+            // Log::debug($request);
 
             return Redirect::route('pilot.profile.edit')->with('status', 'プロフィールを更新しました。');
         } catch (\Exception $e) {
