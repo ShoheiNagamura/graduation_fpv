@@ -40,10 +40,11 @@ class ProfileController extends Controller
             // die();
 
             $request->user()->save();
+            Log::debug($request);
 
             return Redirect::route('pilot.profile.edit')->with('status', 'プロフィールを更新しました。');
         } catch (\Exception $e) {
-            dd($e);
+            Log::debug($e);
             $e->getMessage();
             session()->flash('flash_message', '更新が失敗しました');
         }
