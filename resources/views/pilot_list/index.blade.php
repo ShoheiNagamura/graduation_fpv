@@ -16,15 +16,12 @@
             <div class="overflow-hidden shadow-sm sm:rounded-sm">
                 <div class="p-2 bg-black border-b border-gray-200">
                     <table class="text-center w-full border-collapse">
-                        <!-- <div>
-                            <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-center text-grey-dark border-b border-grey-light">作品（パイロットリスト）</th>
-                        </div> -->
                         @foreach ($pilots as $pilot)
                         <tr class="hover:bg-grey-lighter">
                             <td class="flex px-2 border-b border-grey-light">
                                 @foreach ($pilot->pilotPortfolios as $portfolio)
                                 <div class="p-2 flex-1">
-                                    <iframe width="395" height="225" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <iframe width="420" height="225" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     <div>
                                         <h3 class="text-left mt-4 font-bold text-lg text-gray-200">撮影者：{{$pilot->name}}({{$pilot->age}})</h3>
                                     </div>
