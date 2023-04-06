@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pilot;
+use App\Models\Portfolio;
 use Auth;
 
 class PilotListController extends Controller
@@ -19,8 +20,9 @@ class PilotListController extends Controller
         // return view('pilot_list.index', ['pilots' => $pilots]);
 
         $pilots = Pilot::with(['pilotPortfolios', 'pilotShootingPlans'])->paginate(3);
+        $portfolios = Portfolio::all()->paginate(3);
         $user = Auth::user();
-        return view('pilot_list.index', ['pilots' => $pilots, 'user' => $user]);
+        return view('pilot_list.index', ['pilots' => $pilots, 'portfolios' => $portfolios, 'user' => $user]);
     }
 
     /**
