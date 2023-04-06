@@ -16,11 +16,7 @@ class PilotListController extends Controller
      */
     public function index()
     {
-        // $pilots = Pilot::with(['pilotPortfolios', 'pilotShootingPlans'])->paginate(3);
-        // return view('pilot_list.index', ['pilots' => $pilots]);
-
         $pilots = Pilot::with(['pilotPortfolios', 'pilotShootingPlans'])->paginate(3);
-        // $portfolios = Portfolio::all()->paginate(3);
         $user = Auth::user();
         return view('pilot_list.index', ['pilots' => $pilots,  'user' => $user]);
     }
