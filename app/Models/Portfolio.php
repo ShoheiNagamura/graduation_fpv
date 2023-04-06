@@ -22,6 +22,14 @@ class Portfolio extends Model
         'portfolio_url',
     ];
 
+    // ポートフォリオを全て取得
+    public static function getAllPilot()
+    {
+        // return self::orderBy('updated_at', 'desc')->get();
+        return Portfolio::with('pilot')->orderBy('created_at', 'desc');
+    }
+
+
     // 多対1
     public function pilot()
     {
