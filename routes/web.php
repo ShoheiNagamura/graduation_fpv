@@ -20,9 +20,9 @@ Route::get('/', function () {
 
 // 一般ユーザー認証用ルーティング ログイン時のみアクセスできる
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/user_dashboard', function () {
+        return view('user_dashboard');
+    })->middleware(['auth', 'verified'])->name('user_dashboard');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -39,9 +39,9 @@ require __DIR__ . '/auth.php';
 
 // パイロットユーザー用ルーティング ログイン時のみアクセスできる
 Route::prefix('pilot')->name('pilot.')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('pilot.dashboard');
-    })->middleware(['auth:pilot', 'verified'])->name('dashboard');
+    Route::get('/pilot_dashboard', function () {
+        return view('pilot.pilot_dashboard');
+    })->middleware(['auth:pilot', 'verified'])->name('pilot_dashboard');
 
     Route::middleware('auth:pilot')->group(function () {
         Route::get('/profile', [ProfilePilotController::class, 'edit'])->name('profile.edit');
