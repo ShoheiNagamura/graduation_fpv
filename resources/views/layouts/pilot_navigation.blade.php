@@ -53,7 +53,11 @@
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('pilot.profile.edit')">
-                            {{ __('プロフィール') }}
+                            {{ __('基本プロフィール') }}
+                        </x-dropdown-link>
+
+                        <x-dropdown-link :href="route('pilot.pilot_list.show',Auth::user()->id)">
+                            {{ __('Myパイロット情報') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -111,6 +115,10 @@
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('pilot.profile.edit')">
                     {{ __('プロフィール') }}
+                </x-responsive-nav-link>
+
+                <x-responsive-nav-link :href="route('pilot.pilot_list.show',Auth::user()->id)">
+                    {{ __('Myパイロット情報') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->

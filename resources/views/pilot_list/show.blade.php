@@ -16,28 +16,36 @@
                     <div class="mb-6">
                         <div class="mb-8">
                             <h2 class="mb-6 uppercase font-bold text-center text-grey-darkest">パイロット詳細</h2>
-                            <div>
-                                <h3 class="text-left mb-4 font-bold text-lg text-grey-dark">お名前：{{$pilot->name}}({{$pilot->age}})</h3>
-                                <h3 class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</h3>
-                                <h3 class="text-left font-bold text-lg text-grey-dark">PRメッセージ</h3>
-                                <p class="text-lg mb-4"> {{$pilot->message_pr}}</p>
-                                <h3 class="text-left font-bold text-lg text-grey-dark">実績</h3>
-                                <p class="text-lg mb-6">{{$pilot->message_pr}}</p>
+                            <div class="flex flex-wrap w-full mb-8">
+                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
+                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">お名前：{{$pilot->name}}({{$pilot->age}})</p>
+                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</p>
+                                    <p class="text-left font-bold text-lg text-grey-dark">PRメッセージ</p>
+                                    <p class="text-lg mb-4"> {{$pilot->message_pr}}</p>
+                                    <p class="text-left font-bold text-lg text-grey-dark">実績</p>
+                                    <p class="text-lg mb-6">{{$pilot->achievement}}</p>
+                                </div>
+
+                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
+                                    <div class="rounded-full overflow-hidden w-10 h-10">
+                                        <img class="w-full h-full object-cover" src="https://www.logi-today.com/wp-content/uploads/2016/12/7fd1859971318b4d7b3e4430b8ec47c1.jpg" alt="">
+                                    </div>
+                                </div>
                             </div>
 
                             <h2 class="mb-6 uppercase font-bold text-center text-grey-darkest">作品</h2>
-                            <div class="flex mt-6">
+                            <div class="flex flex-wrap -mx-2 mt-6">
                                 @foreach ($pilot->pilotPortfolios as $portfolio)
-                                <div class="flex-1"><iframe width="400" height="245" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 px-4 mb-8"><iframe width="400" height="245" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                                 @endforeach
                             </div>
                         </div>
 
-                        <h2 class="mt-8 mb-4 uppercase font-bold text-center text-lg text-grey-darkest">プラン一覧</h2>
+                        <h2 class="mt-8 mb-4 uppercase font-bold text-center text-lg text-grey-darkest border-b-2 border-fuchsia-600">プラン一覧</h2>
 
-                        <div class="flex">
+                        <div class="flex flex-wrap -mx-2">
                             @foreach ($pilot->pilotShootingPlans as $ShootingPlans)
-                            <div class="flex-1 border hover:bg-grey-lighter">
+                            <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 px-4 mb-8 border hover:bg-grey-lighter">
                                 <div class="py-4 px-6 border-b border-grey-light">
                                     <div class="">
                                         <div>
@@ -45,9 +53,6 @@
                                         </div>
                                         <div>
                                             <h3 class="text-left font-bold text-lg text-grey-dark">プラン名 : {{$ShootingPlans->plan_name}}</h3>
-                                        </div>
-                                        <div>
-                                            <p>報酬 : {{number_format($ShootingPlans->plan_fee)}}</p>
                                         </div>
                                         <div>
                                             <p>申込日 : {{$ShootingPlans->application_date}}</p>
@@ -91,29 +96,37 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="mb-6">
-                        <div class="mb-4">
+                        <div class="mb-8">
                             <h2 class="mb-6 uppercase font-bold text-center text-grey-darkest">パイロット詳細</h2>
-                            <div>
-                                <h3 class="text-left mb-4 font-bold text-lg text-grey-dark">お名前：{{$pilot->name}}({{$pilot->age}})</h3>
-                                <h3 class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</h3>
-                                <h3 class="text-left font-bold text-lg text-grey-dark">PRメッセージ</h3>
-                                <p class="text-lg mb-4"> {{$pilot->message_pr}}</p>
-                                <h3 class="text-left font-bold text-lg text-grey-dark">実績</h3>
-                                <p class="text-lg mb-6">{{$pilot->message_pr}}</p>
+                            <div class="flex flex-wrap w-full mb-8">
+                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
+                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">お名前：{{$pilot->name}}({{$pilot->age}})</p>
+                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</p>
+                                    <p class="text-left font-bold text-lg text-grey-dark">PRメッセージ</p>
+                                    <p class="text-lg mb-4"> {{$pilot->message_pr}}</p>
+                                    <p class="text-left font-bold text-lg text-grey-dark">実績</p>
+                                    <p class="text-lg mb-6">{{$pilot->achievement}}</p>
+                                </div>
+
+                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
+                                    <div class="rounded-full overflow-hidden w-10 h-10">
+                                        <img class="w-full h-full object-cover" src="https://www.logi-today.com/wp-content/uploads/2016/12/7fd1859971318b4d7b3e4430b8ec47c1.jpg" alt="">
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="flex mt-6">
+                            <div class="flex flex-wrap -mx-2 mt-6">
                                 @foreach ($pilot->pilotPortfolios as $portfolio)
-                                <div class="flex-1"><iframe width="400" height="245" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 px-4 mb-8"><iframe width="400" height="245" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                                 @endforeach
                             </div>
                         </div>
 
-                        <h2 class="mb-4 uppercase font-bold text-center text-lg text-grey-darkest">プラン一覧</h2>
+                        <h2 class="mb-4 uppercase font-bold text-center text-lg text-grey-darkest border-b-2 border-fuchsia-600">プラン一覧</h2>
 
-                        <div class="flex">
+                        <div class="flex flex-wrap -mx-2">
                             @foreach ($pilot->pilotShootingPlans as $ShootingPlans)
-                            <div class="flex-1 border hover:bg-grey-lighter">
+                            <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 px-4 mb-8 border hover:bg-grey-lighter">
                                 <div class="py-4 px-6 border-b border-grey-light">
                                     <div class="flex">
                                         <div>
@@ -122,9 +135,6 @@
                                             </div>
                                             <div>
                                                 <h3 class="text-left font-bold text-lg text-grey-dark">プラン名 : {{$ShootingPlans->plan_name}}</h3>
-                                            </div>
-                                            <div>
-                                                <p>報酬 : {{number_format($ShootingPlans->plan_fee)}}</p>
                                             </div>
                                             <div>
                                                 <p>申込日 : {{$ShootingPlans->application_date}}</p>
@@ -136,6 +146,9 @@
                                                 <p>納品日 : {{$ShootingPlans->delivery_date}}</p>
                                             </div>
                                             <div class="w-30 text-center">
+                                                <a href="{{ route('shooting_plan.show',$ShootingPlans->id) }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                                    詳細
+                                                </a>
                                                 <a href="{{ route('pilot_list.show',$pilot->id) }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                                                     申し込み
                                                 </a>
