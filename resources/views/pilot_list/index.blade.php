@@ -20,7 +20,7 @@
                         <iframe width="100%" height="225" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         <div class="p-4 bg-gray-800">
                             <h3 class="text-lg font-bold text-gray-200 mb-4">撮影者：{{$portfolio->pilot->name}}({{$portfolio->pilot->age}})</h3>
-                            <a href="{{ route('pilot_list.show',$portfolio->pilot->id) }}" class="block rounded-lg py-2 px-4 text-black bg-gray-100 shadow-lg focus:outline-none hover:bg-gray-300 hover:shadow-none">
+                            <a href="{{ route('pilot.pilot_list.show',$portfolio->pilot->id) }}" class="block rounded-lg py-2 px-4 text-black bg-gray-100 shadow-lg focus:outline-none hover:bg-gray-300 hover:shadow-none">
                                 →
                             </a>
                         </div>
