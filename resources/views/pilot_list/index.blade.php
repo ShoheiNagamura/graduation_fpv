@@ -30,8 +30,8 @@
                 @endforeach
             </div>
             @endforeach
-            {{ $pilots->links() }}
         </div>
+        {{ $pilots->links() }}
     </div>
 </x-pilot-layout>
 
