@@ -55,9 +55,6 @@
                                             <h3 class="text-left font-bold text-lg text-grey-dark">プラン名 : {{$ShootingPlans->plan_name}}</h3>
                                         </div>
                                         <div>
-                                            <p>報酬 : {{number_format($ShootingPlans->plan_fee)}}</p>
-                                        </div>
-                                        <div>
                                             <p>申込日 : {{$ShootingPlans->application_date}}</p>
                                         </div>
                                         <div>
@@ -140,9 +137,6 @@
                                                 <h3 class="text-left font-bold text-lg text-grey-dark">プラン名 : {{$ShootingPlans->plan_name}}</h3>
                                             </div>
                                             <div>
-                                                <p>報酬 : {{number_format($ShootingPlans->plan_fee)}}</p>
-                                            </div>
-                                            <div>
                                                 <p>申込日 : {{$ShootingPlans->application_date}}</p>
                                             </div>
                                             <div>
@@ -152,6 +146,9 @@
                                                 <p>納品日 : {{$ShootingPlans->delivery_date}}</p>
                                             </div>
                                             <div class="w-30 text-center">
+                                                <a href="{{ route('shooting_plan.show',$ShootingPlans->id) }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                                    詳細
+                                                </a>
                                                 <a href="{{ route('pilot_list.show',$pilot->id) }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                                                     申し込み
                                                 </a>

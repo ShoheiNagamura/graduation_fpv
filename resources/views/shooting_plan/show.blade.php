@@ -31,7 +31,7 @@
                         <div class="flex flex-col mb-4">
                             <p class="mb-2 uppercase font-bold text-lg text-grey-darkest">料金</p>
                             <p class="py-2 px-3 text-grey-darkest" id="description">
-                                {{number_format($plan->plan_fee)}}
+                                {{number_format($plan->plan_fee)}}円
                             </p>
                         </div>
                         <div class="flex flex-col mb-4">

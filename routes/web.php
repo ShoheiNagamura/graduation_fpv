@@ -28,9 +28,14 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-
     //パイロットリスト
     Route::resource('pilot_list', PilotListController::class);
+
+    //発注用プランのルーティング
+    Route::resource('shooting_plan', ShootingPlanController::class);
+
+    // ポートフォリオ用
+    Route::resource('portfolio', PortfolioController::class);
 });
 
 require __DIR__ . '/auth.php';
