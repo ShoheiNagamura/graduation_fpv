@@ -30,12 +30,6 @@ class Pilot extends Authenticatable
         return $this->hasMany(ShootingPlan::class);
     }
 
-    // いいね機能リレーション 多対多
-    public function pilot_likes()
-    {
-        return $this->belongsToMany(Role::class, 'pilot_likes', 'pilot_id', 'user_id')->withTimestamps();
-    }
-
 
     // チャット機能リレーション 多対多
     public function user_chats()
