@@ -22,7 +22,7 @@ class PortfolioController extends Controller
         $userId = $request->user()->id;
 
         // ログインユーザーの発注用プランを取得
-        $portfolios = Portfolio::where('pilot_id', $userId)->paginate(3);
+        $portfolios = Portfolio::where('pilot_id', $userId)->orderBy('created_at', 'desc')->paginate(6);
 
         // ビューにデータを渡す
         return view('portfolio.index', ['portfolios' => $portfolios]);
