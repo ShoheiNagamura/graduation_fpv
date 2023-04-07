@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pilot_likes', function (Blueprint $table) {
+        Schema::create('portfolio_likes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('pilot_id');
+            $table->unsignedBigInteger('portfolio_id');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('pilot_id')->references('id')->on('pilots')->onDelete('cascade');
+            $table->foreign('portfolio_id')->references('id')->on('portfolio_likes')->onDelete('cascade');
         });
     }
 
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pilot_likes');
+        Schema::dropIfExists('portfolio_likes');
     }
 };

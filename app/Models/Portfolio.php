@@ -35,4 +35,12 @@ class Portfolio extends Model
     {
         return $this->belongsTo(Pilot::class);
     }
+
+
+
+    // いいね機能リレーション 多対多
+    public function portfolio_likes()
+    {
+        return $this->belongsToMany(Role::class, ' portfolio_likes', ' portfolio_id', 'user_id')->withTimestamps();
+    }
 }

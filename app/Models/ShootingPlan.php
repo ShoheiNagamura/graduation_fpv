@@ -42,6 +42,6 @@ class ShootingPlan extends Model
     // 受注管理機能リレーション 多対多
     public function pilot_orders()
     {
-        return $this->belongsToMany(Role::class, 'pilot_orders', 'shooting_plan_id', 'user_id');
+        return $this->belongsToMany(Role::class, 'pilot_orders', 'shooting_plan_id', 'user_id')->withTimestamps();
     }
 }
