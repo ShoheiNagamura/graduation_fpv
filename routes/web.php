@@ -67,10 +67,10 @@ Route::prefix('pilot')->name('pilot.')->group(function () {
         Route::resource('pilot_list', PilotListController::class);
 
         //発注用プランのルーティング
-        Route::resource('shooting_plan', ShootingPlanController::class);
+        Route::resource('pilot_dashboard/shooting_plan', ShootingPlanController::class);
 
         // ポートフォリオ用
-        Route::resource('portfolio', PortfolioController::class);
+        Route::resource('pilot_dashboard/portfolio', PortfolioController::class);
     });
 
 
