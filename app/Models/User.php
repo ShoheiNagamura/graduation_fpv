@@ -12,9 +12,6 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-
-
-
     // いいね機能リレーション 多対多
     public function portfolio_likes()
     {
@@ -28,11 +25,10 @@ class User extends Authenticatable
     }
 
     // 受注管理機能リレーション 多対多
-    public function pilot_orders()
+    public function orderUser()
     {
-        return $this->belongsToMany(Role::class, 'pilot_orders', 'user_id', 'shooting_plan_id')->withTimestamps();
+        return $this->belongsToMany(ShootingPlan::class, 'orders', 'user_id', 'shooting_plan_id')->withTimestamps();
     }
-
 
 
     /**

@@ -149,9 +149,11 @@
                                                 <a href="{{ route('shooting_plan.show',$ShootingPlans->id) }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                                                     詳細
                                                 </a>
-                                                <a href="{{ route('pilot_list.show',$pilot->id) }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
-                                                    申し込み
-                                                </a>
+                                                <form action="{{ route('orders.store') }}" method="post">
+                                                    @csrf
+                                                    <input type="hidden" name="shooting_plan_id" value="{{ $ShootingPlans->id }}">
+                                                    <button type="submit">申し込み</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
