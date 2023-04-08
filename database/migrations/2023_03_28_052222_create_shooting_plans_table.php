@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('shooting_plans', function (Blueprint $table) {
             $table->id();
-            $table->foreign('pilot_id')->references('id')->on('pilots')->onDelete('cascade');
+            $table->foreignId('pilot_id')->references('id')->on('pilots')->onDelete('cascade');
             $table->string('plan_name');
             $table->string('plan_detail', 500);
             $table->integer('plan_fee');
