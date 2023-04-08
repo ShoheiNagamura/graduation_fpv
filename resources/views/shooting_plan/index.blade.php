@@ -5,35 +5,49 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:w-10/12 md:w-8/10 lg:w-8/12">
-            <a href="{{ route('pilot.shooting_plan.create') }}" :active="request()->routeIs('pilot.shooting_plan.create')" class="block text-center w-full py-3 mb-6  mt-6 font-medium tracking-widest text-black uppercase bg-white shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
-                プラン作成
-            </a>
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <table class="text-center w-full border-collapse">
-                        <tbody>
+
+    <div class="flex justify-center bg-white p-6">
+        <div class="w-1/4">
+            <div class="flex flex-col justify-start">
+                <a href="{{ route('pilot.profile.edit')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">基本プロフィール</a>
+                <a href="{{route('pilot.pilot_dashboard')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">案件受注管理</a>
+                <a href="{{route('pilot.shooting_plan.index')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">プラン管理</a>
+                <a href="{{route('pilot.portfolio.index')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">ポートフォリオ管理</a>
+                <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">報酬管理</a>
+                <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">メッセージ</a>
+            </div>
+        </div>
+        <div class="w-3/4">
+            <table class="max-w-7xl mx-auto sm:w-10/12 md:w-8/10 lg:w-8/12">
+                <a href="{{ route('pilot.shooting_plan.create') }}" :active="request()->routeIs('pilot.shooting_plan.create')" class="block text-center w-full py-3 mb-6 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                    プラン作成
+                </a>
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <table class="w-full border-collapse border border-gray-200 text-center">
+                        <thead>
+                            <tr>
+                                <th class="py-4 px-6 border-b border-gray-200 text-left font-bold text-lg text-gray-700">ID</th>
+                                <th class="py-4 px-6 border-b border-gray-200 text-left font-bold text-lg text-gray-700">案件名</th>
+                                <th class="py-4 px-6 border-b border-gray-200 text-left font-bold text-lg text-gray-700">報酬</th>
+                                <th class="py-4 px-6 border-b border-gray-200 text-left font-bold text-lg text-gray-700">申込日</th>
+                                <th class="py-4 px-6 border-b border-gray-200 text-left font-bold text-lg text-gray-700">撮影実施日</th>
+                                <th class="py-4 px-6 border-b border-gray-200 text-left font-bold text-lg text-gray-700">納品日</th>
+                                <th class="py-4 px-6 border-b border-gray-200 text-left font-bold text-lg text-gray-700"></th>
+                            </tr>
+                        </thead>
+
+
+                        <div>
                             @foreach ($plans as $plan)
-                            <tr class="hover:bg-grey-lighter">
-                                <td class="py-4 px-6 border-b border-grey-light">
-                                    <div>
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">ID:{{$plan->id}}</h3>
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">案件名:{{$plan->plan_name}}</h3>
-                                    </div>
-                                    <div>
-                                        <p>報酬 : ￥{{number_format($plan->plan_fee)}}</p>
-                                    </div>
-                                    <div>
-                                        <p>申込日 : {{$plan->application_date}}</p>
-                                    </div>
-                                    <div>
-                                        <p>撮影実施日 : {{$plan->shooting_date}}</p>
-                                    </div>
-                                    <div>
-                                        <p>納品日 : {{$plan->delivery_date}}</p>
-                                    </div>
-                                    <a href="{{ route('pilot.shooting_plan.show',$plan->id) }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                            <tr class="hover:bg-gray-100">
+                                <td class="py-4 px-6 border-b border-gray-200">{{ $plan->id }}</td>
+                                <td class="py-4 px-6 border-b border-gray-200">{{ $plan->plan_name }}</td>
+                                <td class="py-4 px-6 border-b border-gray-200">￥{{ number_format($plan->plan_fee) }}</td>
+                                <td class="py-4 px-6 border-b border-gray-200">{{ $plan->application_date }}</td>
+                                <td class="py-4 px-6 border-b border-gray-200">{{ $plan->shooting_date }}</td>
+                                <td class="py-4 px-6 border-b border-gray-200">{{ $plan->delivery_date }}</td>
+                                <td class="py-4 px-6 border-b border-gray-200">
+                                    <a href="{{ route('pilot.shooting_plan.show', $plan->id) }}" class="block text-center w-full py-3 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                                         詳細
                                     </a>
                                     <div class="flex">
@@ -60,11 +74,12 @@
                                 </td>
                             </tr>
                             @endforeach
-                        </tbody>
+                        </div>
                         {{ $plans->links() }}
-                    </table>
+                        </tbody>
                 </div>
-            </div>
+            </table>
         </div>
     </div>
+
 </x-pilot-layout>
