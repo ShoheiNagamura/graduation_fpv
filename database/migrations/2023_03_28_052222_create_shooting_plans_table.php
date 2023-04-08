@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('shooting_plans', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('pilot_id'); //外部キー
+            $table->foreign('pilot_id')->references('id')->on('pilots')->onDelete('cascade');
             $table->string('plan_name');
             $table->string('plan_detail', 500);
             $table->integer('plan_fee');
@@ -26,7 +26,7 @@ return new class extends Migration
 
 
             //外部キーの制約
-            $table->foreign('pilot_id')->references('id')->on('pilots')->onDelete('cascade');
+            // $table->foreign('pilot_id')->references('id')->on('pilots')->onDelete('cascade');
         });
     }
 
