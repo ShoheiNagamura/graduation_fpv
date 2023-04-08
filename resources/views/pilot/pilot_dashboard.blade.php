@@ -1,16 +1,16 @@
 <x-pilot-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('受注管理') }}
+            {{ __('ダッシュボード') }}
         </h2>
     </x-slot>
 
 
-    <div class="flex justify-center items-center bg-white p-6">
+    <div class="flex justify-center bg-white p-6">
         <div class="w-1/4">
             <div class="flex flex-col justify-start">
                 <a href="{{ route('pilot.profile.edit')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">基本プロフィール</a>
-                <a href="{{route('pilot.pilot_dashboard')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">オファー管理</a>
+                <a href="{{route('pilot.pilot_dashboard')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">案件受注管理</a>
                 <a href="{{route('pilot.shooting_plan.index')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">プラン管理</a>
                 <a href="{{route('pilot.portfolio.index')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">ポートフォリオ管理</a>
                 <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">報酬管理</a>
