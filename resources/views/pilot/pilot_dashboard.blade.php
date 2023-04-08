@@ -11,6 +11,8 @@
             <div class="flex flex-col justify-start">
                 <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">マイページ</a>
                 <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">オファー管理</a>
+                <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">プラン管理</a>
+                <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">ポートフォリオ管理</a>
                 <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">報酬管理</a>
                 <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">メッセージ</a>
             </div>
