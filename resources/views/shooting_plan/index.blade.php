@@ -13,11 +13,6 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="text-center w-full border-collapse">
-                        <!-- <thead>
-                            <tr>
-                                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">登録済みプラン一覧</th>
-                            </tr>
-                        </thead> -->
                         <tbody>
                             @foreach ($plans as $plan)
                             <tr class="hover:bg-grey-lighter">
@@ -26,9 +21,6 @@
                                         <h3 class="text-left font-bold text-lg text-grey-dark">ID:{{$plan->id}}</h3>
                                         <h3 class="text-left font-bold text-lg text-grey-dark">案件名:{{$plan->plan_name}}</h3>
                                     </div>
-                                    <!-- <div>
-                                        <p>{{$plan->plan_detail}}</p>
-                                    </div> -->
                                     <div>
                                         <p>報酬 : ￥{{number_format($plan->plan_fee)}}</p>
                                     </div>
@@ -41,9 +33,6 @@
                                     <div>
                                         <p>納品日 : {{$plan->delivery_date}}</p>
                                     </div>
-                                    <!-- <a href="{{ route('pilot.shooting_plan.show',$plan->id) }}">
-                                        <h3 class="text-left font-bold text-lg text-grey-dark">{{$plan->plan_name}}</h3>
-                                    </a> -->
                                     <a href="{{ route('pilot.shooting_plan.show',$plan->id) }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                                         詳細
                                     </a>
