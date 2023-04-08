@@ -26,6 +26,10 @@ class ShootingPlan extends Model
         'delivery_date'
     ];
 
+    protected $attribute = [
+        'application_date' => null,
+    ];
+
 
     public static function getAllOrderByUpdated_at()
     {
@@ -40,8 +44,8 @@ class ShootingPlan extends Model
 
 
     // 受注管理機能リレーション 多対多
-    public function pilot_orders()
+    public function orders()
     {
-        return $this->belongsToMany(Role::class, 'pilot_orders', 'shooting_plan_id', 'user_id')->withTimestamps();
+        return $this->hasMany(Order::class);
     }
 }
