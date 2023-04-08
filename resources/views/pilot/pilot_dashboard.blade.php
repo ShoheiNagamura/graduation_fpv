@@ -10,9 +10,9 @@
         <div class="w-1/4">
             <div class="flex flex-col justify-start">
                 <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">マイページ</a>
-                <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">オファー管理</a>
-                <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">プラン管理</a>
-                <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">ポートフォリオ管理</a>
+                <a href="{{route('pilot.pilot_dashboard')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">オファー管理</a>
+                <a href="{{route('pilot.shooting_plan.index')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">プラン管理</a>
+                <a href="{{route('pilot.portfolio.index')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">ポートフォリオ管理</a>
                 <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">報酬管理</a>
                 <a href="#" class="py-2 px-4 text-gray-800 hover:bg-gray-100">メッセージ</a>
             </div>
