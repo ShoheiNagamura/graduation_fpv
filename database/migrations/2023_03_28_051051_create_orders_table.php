@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('shooting_plan_id');
-            $table->unsignedBigInteger('user_id');
+            $table->foreign('shooting_plan_id')->references('id')->on('shooting_plans')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('status')->default(0);
             $table->datetime('application_date');
             $table->timestamps();
 
-            $table->foreign('shooting_plan_id')->references('id')->on('shooting_plans')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            // $table->foreign('shooting_plan_id')->references('id')->on('shooting_plans')->onDelete('cascade');
+            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
