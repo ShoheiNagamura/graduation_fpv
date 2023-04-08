@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShootingPlanController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PilotListController;
+use App\Http\Controllers\OrderController;
 
 
 // トップページ
@@ -34,6 +35,11 @@ Route::middleware('auth')->group(function () {
     //発注用プランのルーティング
     Route::resource('shooting_plan', ShootingPlanController::class);
 
+    // 受注用プラン
+    Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
+
+    Route::post('orders', [OrderController::class, 'store'])->name('orders.store');
+
     // ポートフォリオ用
     Route::resource('portfolio', PortfolioController::class);
 });
@@ -44,9 +50,13 @@ require __DIR__ . '/auth.php';
 
 // パイロットユーザー用ルーティング ログイン時のみアクセスできる
 Route::prefix('pilot')->name('pilot.')->group(function () {
-    Route::get('/pilot_dashboard', function () {
-        return view('pilot.pilot_dashboard');
-    })->middleware(['auth:pilot', 'verified'])->name('pilot_dashboard');
+    // Route::get('/pilot_dashboard', function () {
+    //     return view('pilot.pilot_dashboard');
+    // })->middleware(['auth:pilot', 'verified'])->name('pilot_dashboard');
+
+    Route::get('/pilot_dashboard', [OrderController::class, 'index'])
+        ->middleware(['auth:pilot', 'verified'])->name('pilot_dashboard');
+
 
     Route::middleware('auth:pilot')->group(function () {
         Route::get('/profile', [ProfilePilotController::class, 'edit'])->name('profile.edit');

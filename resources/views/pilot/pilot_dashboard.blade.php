@@ -5,13 +5,41 @@
         </h2>
     </x-slot>
 
-    <div class="py-12 bg-white">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("パイロットログイン完了") }}
-                </div>
-            </div>
-        </div>
+
+
+    <div class="bg-white">
+        <table>
+            <tr>
+                <th>プラン名</th>
+                <th>お申し込み者</th>
+                <th>受注日</th>
+                <th>ステータス</th>
+                <th>備考</th>
+            </tr>
+            @foreach($data->pilotShootingPlans as $plan)
+            @foreach($plan->orders as $order )
+            <tr>
+                <td>
+                    <p>{{$plan->plan_name}}</p>
+                </td>
+                <td>
+                    <p>{{$order->user->name}}</p>
+                </td>
+                <td>
+                    <p>{{$order->application_date}}</p>
+                </td>
+                <td>
+                    @if($order->status === 0)
+                    <p>未着手</p>
+                    @elseif($order->status === 1)
+                    <p>進行中</p>
+                    @elseif($order->status === 2)
+                    <p>完了</p>
+                </td>
+            </tr>
+            @endif
+            @endforeach
+            @endforeach
+        </table>
     </div>
 </x-pilot-layout>
