@@ -47,27 +47,23 @@
                                 <td class="py-4 px-6 border-b border-gray-200">{{ $plan->shooting_date }}</td>
                                 <td class="py-4 px-6 border-b border-gray-200">{{ $plan->delivery_date }}</td>
                                 <td class="py-4 px-6 border-b border-gray-200">
-                                    <a href="{{ route('pilot.shooting_plan.show', $plan->id) }}" class="block text-center w-full py-3 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                    <a href="{{ route('pilot.shooting_plan.show', $plan->id) }}" class="rounded-md block text-center w-full py-3 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                                         詳細
                                     </a>
                                     <div class="flex">
                                         <!-- 更新ボタン -->
-                                        <form action="{{ route('pilot.shooting_plan.edit',$plan->id) }}" method="GET" class="text-left">
+                                        <form action="{{ route('pilot.shooting_plan.edit',$plan->id) }}" method="GET" class="w-1/2 text-center mt-2">
                                             @csrf
-                                            <button type="submit" class="mr-2 ml-2 text-sm hover:bg-gray-200 hover:shadow-none text-white py-1 px-2 focus:outline-none focus:shadow-outline">
-                                                <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="black">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                </svg>
+                                            <button type="submit" class="rounded-md  text-sm hover:shadow-none bg-green-400  text-center text-white py-2 px-8 focus:outline-none focus:shadow-outline">
+                                                変更
                                             </button>
                                         </form>
                                         <!-- 削除ボタン -->
-                                        <form action="{{ route('pilot.shooting_plan.destroy',$plan->id) }}" method="POST" class="text-left">
+                                        <form action="{{ route('pilot.shooting_plan.destroy',$plan->id) }}" method="POST" class="w-1/2 text-center mt-2">
                                             @method('delete')
                                             @csrf
-                                            <button type="submit" class="mr-2 ml-2 text-sm hover:bg-gray-200 hover:shadow-none text-white py-1 px-2 focus:outline-none focus:shadow-outline">
-                                                <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="black">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                </svg>
+                                            <button type="submit" class="rounded-md text-sm hover:shadow-none bg-red-400 text-center text-white  py-2 px-8 focus:outline-none focus:shadow-outline">
+                                                削除
                                             </button>
                                         </form>
                                     </div>
