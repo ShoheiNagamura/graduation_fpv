@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 
 
+
 // 一般ユーザー認証用ルーティング ログイン時のみアクセスできる
 Route::middleware('auth')->group(function () {
     Route::get('/user_dashboard', function () {

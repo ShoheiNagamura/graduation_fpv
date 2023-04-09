@@ -18,7 +18,7 @@
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('pilot.shooting_plan.index')" :active="request()->routeIs('pilot.shooting_plan.index')">
                         {{ __('プラン') }}
                     </x-nav-link>
@@ -28,7 +28,7 @@
                     <x-nav-link :href="route('pilot.portfolio.index')" :active="request()->routeIs('pilot.portfolio.index')">
                         {{ __('ポートフォリオ') }}
                     </x-nav-link>
-                </div>
+                </div> -->
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('pilot.pilot_dashboard')" :active="request()->routeIs('pilot.pilot_dashboard')">
