@@ -20,23 +20,19 @@
 
         <div class="w-3/4">
             <div class="max-w-7xl mx-auto sm:w-10/12 md:w-8/10 lg:w-7/8">
-                <a href="{{ route('pilot.portfolio.create') }}" :active="request()->routeIs('pilot.portfolio.create')" class="block text-center w-full py-3 mb-6  mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:text-white hover:shadow-none">
+                <a href="{{ route('pilot.portfolio.create') }}" :active="request()->routeIs('pilot.portfolio.create')" class="text-center py-3 px-4 mb-6  mt-6 font-medium text-white bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:text-white hover:shadow-none">
                     {{ __('ポートフォリオ作成') }}
                 </a>
 
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-2 bg-white border-b border-gray-200">
-                        <div class="text-center w-full border-collapse">
-                            <div>
-                                <div>
-                                    <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">ポートフォリオ一覧</th>
-                                </div>
-                            </div>
+                <div class="bg-white overflow-hidden ">
+                    <div class="p-2 bg-white">
+                        <div class="text-center w-full ">
+                            <div class="py-4 px-6 text-base font-bold uppercase text-grey-dark">ポートフォリオ一覧</div>
 
                             <div class="flex flex-wrap -mx-2">
                                 @foreach ($portfolios as $portfolio)
-                                <div class="hover:bg-grey-lighter w-full sm:w-1/3 md:w-1/3 lg:w-1/3 px-2 mb-8">
-                                    <div class="border-b border-grey-light">
+                                <div class="w-full sm:w-1/3 md:w-1/3 lg:w-1/3 px-2 mb-8">
+                                    <div class="">
                                         <iframe width="100%" height="200" src="{{ $portfolio->portfolio_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                         <a href="{{ route('pilot.portfolio.show',$portfolio->id) }}" class="block rounded-md text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                                             詳細
