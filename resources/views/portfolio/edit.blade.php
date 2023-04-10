@@ -41,15 +41,18 @@
                                             </span>
                                             @enderror
                                         </div>
-
-                                        <div class="form-group mb-4">
-                                            <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
-                                                更新
-                                            </button>
+                                        <div class="flex justify-center">
+                                            <div>
+                                                <div class="form-group mb-4">
+                                                    <button type="submit" class="w-full rounded-md py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                                        更新
+                                                    </button>
+                                                </div>
+                                                <a href="{{ url()->previous() }}" class="rounded-md text-center py-3 px-4 mt-6 font-medium tracking-widest text-black bg-gray-200 uppercase  shadow-lg focus:outline-none hover:bg-gray-800 hover:shadow-none">
+                                                    戻る
+                                                </a>
+                                            </div>
                                         </div>
-                                        <a href="{{ url()->previous() }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
-                                            戻る
-                                        </a>
                                     </form>
                                 </div>
                             </div>
