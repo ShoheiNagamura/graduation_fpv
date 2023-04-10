@@ -27,7 +27,7 @@
                             @method('put')
                             @csrf
                             <div class="flex flex-col mb-4">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="plan_name">{{ __('プラン名') }}</label>
+                                <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="plan_name">{{ __('プラン名') }}</label>
                                 <input class="border py-2 px-3 text-grey-darkest" id="plan_name" type="text" class="form-control @error('plan_name') is-invalid @enderror" name="plan_name" value="{{ $plan->plan_name }}" required autocomplete="plan_name" autofocus>
                                 <!-- //バリデーションエラー -->
                                 @error('plan_name')
@@ -38,7 +38,7 @@
                             </div>
 
                             <div class="flex flex-col mb-4">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="plan_detail">{{ __('プラン内容') }}</label>
+                                <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="plan_detail">{{ __('プラン内容') }}</label>
                                 <textarea id="plan_detail" class="form-control @error('plan_detail') is-invalid @enderror" name="plan_detail" required>{{ $plan->plan_detail }}</textarea>
                                 <!-- //バリデーションエラー -->
                                 @error('plan_detail')
@@ -49,7 +49,7 @@
                             </div>
 
                             <div class="flex flex-col mb-4">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="plan_fee">{{ __('料金') }}</label>
+                                <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="plan_fee">{{ __('料金') }}</label>
                                 <input id="plan_fee" type="number" class="form-control @error('plan_fee') is-invalid @enderror" name=" plan_fee" value="{{$plan->plan_fee}}" required autocomplete="plan_fee">
                                 <!-- //バリデーションエラー -->
                                 @error('plan_fee')
@@ -60,7 +60,7 @@
                             </div>
 
                             <div class="flex flex-col mb-4">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="application_date">{{ __('申込日') }}</label>
+                                <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="application_date">{{ __('申込日') }}</label>
                                 <input id="application_date" type="date" class="form-control @error('application_date') is-invalid @enderror" name="application_date" value="{{ $plan->application_date }}" required>
                                 <!-- //バリデーションエラー -->
                                 @error('application_date')
@@ -71,7 +71,7 @@
                             </div>
 
                             <div class="flex flex-col mb-4">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="shooting_date">{{ __('撮影実施日') }}</label>
+                                <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="shooting_date">{{ __('撮影実施日') }}</label>
                                 <input id="shooting_date" type="date" class="form-control @error('shooting_date') is-invalid @enderror" name="shooting_date" value="{{ $plan->shooting_date }}" required>
                                 <!-- //バリデーションエラー -->
                                 @error('shooting_date')
@@ -82,7 +82,7 @@
                             </div>
 
                             <div class="flex flex-col mb-4">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="delivery_date">{{ __('納品日') }}</label>
+                                <label class="block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2" for="delivery_date">{{ __('納品日') }}</label>
                                 <input id="delivery_date" type="date" class="form-control @error('delivery_date') is-invalid @enderror" name="delivery_date" value="{{ $plan->delivery_date }}" required>
                                 <!-- //バリデーションエラー -->
                                 @error('delivery_date')
