@@ -20,18 +20,14 @@
 
         <div class="w-3/4">
             <div class="max-w-7xl mx-auto sm:w-10/12 md:w-8/10 lg:w-7/8">
-                <a href="{{ route('pilot.portfolio.create') }}" :active="request()->routeIs('pilot.portfolio.create')" class="block text-center w-full py-3 mb-6  mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:text-white hover:shadow-none">
+                <a href="{{ route('pilot.portfolio.create') }}" :active="request()->routeIs('pilot.portfolio.create')" class="text-center py-3 px-4 mb-6  mt-6 font-medium text-white bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:text-white hover:shadow-none">
                     {{ __('ポートフォリオ作成') }}
                 </a>
 
                 <div class="bg-white overflow-hidden ">
                     <div class="p-2 bg-white">
                         <div class="text-center w-full ">
-                            <div>
-                                <div>
-                                    <th class="py-4 px-6 font-bold uppercase text-lg text-grey-dark border-b border-grey-light">ポートフォリオ一覧</th>
-                                </div>
-                            </div>
+                            <div class="py-4 px-6 text-base font-bold uppercase text-grey-dark">ポートフォリオ一覧</div>
 
                             <div class="flex flex-wrap -mx-2">
                                 @foreach ($portfolios as $portfolio)

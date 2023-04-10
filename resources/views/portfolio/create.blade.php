@@ -48,7 +48,7 @@
                                                 登録
                                             </button>
                                         </div>
-                                        <a href="{{ url()->previous() }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
+                                        <a href="{{ url()->previous() }}" class="block text-center w-full py-3 mt-6 font-medium tracking-widest uppercase text-black bg-gray-200 shadow-lg focus:outline-none hover:bg-gray-800 hover:shadow-none">
                                             戻る
                                         </a>
                                     </form>
