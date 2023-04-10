@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="flex justify-center bg-white p-6">
-        <div class="w-1/4">
+        <div class="w-1/4 flex justify-center">
             <div class="flex flex-col justify-start">
                 <a href="{{ route('pilot.profile.edit')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">基本プロフィール</a>
                 <a href="{{route('pilot.pilot_dashboard')}}" class="py-2 px-4 text-gray-800 hover:bg-gray-100">案件受注管理</a>
