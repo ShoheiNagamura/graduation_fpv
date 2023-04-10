@@ -18,7 +18,7 @@
                             <h2 class="mb-6 uppercase font-bold text-center text-grey-darkest">パイロット詳細</h2>
                             <div class="flex flex-wrap w-full mb-8">
                                 <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
-                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">お名前：{{$pilot->name}}({{$pilot->age}})</p>
+                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">氏名：{{$pilot->name}}({{$pilot->age}})</p>
                                     <p class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</p>
                                     <p class="text-left font-bold text-lg text-grey-dark">PRメッセージ</p>
                                     <p class="text-lg mb-4"> {{$pilot->message_pr}}</p>
@@ -27,7 +27,7 @@
                                 </div>
 
                                 <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
-                                    <div class="rounded-full overflow-hidden w-10 h-10">
+                                    <div class="rounded-full overflow-hidden w-15 h-15">
                                         <img class="w-full h-full object-cover" src="https://www.logi-today.com/wp-content/uploads/2016/12/7fd1859971318b4d7b3e4430b8ec47c1.jpg" alt="">
                                     </div>
                                 </div>
@@ -100,7 +100,7 @@
                             <h2 class="mb-6 uppercase font-bold text-center text-grey-darkest">パイロット詳細</h2>
                             <div class="flex flex-wrap w-full mb-8">
                                 <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
-                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">お名前：{{$pilot->name}}({{$pilot->age}})</p>
+                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">氏名：{{$pilot->name}}({{$pilot->age}})</p>
                                     <p class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</p>
                                     <p class="text-left font-bold text-lg text-grey-dark">PRメッセージ</p>
                                     <p class="text-lg mb-4"> {{$pilot->message_pr}}</p>
@@ -109,7 +109,7 @@
                                 </div>
 
                                 <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
-                                    <div class="rounded-full overflow-hidden w-10 h-10">
+                                    <div class="rounded-full overflow-hidden w-15 h-15">
                                         <img class="w-full h-full object-cover" src="https://www.logi-today.com/wp-content/uploads/2016/12/7fd1859971318b4d7b3e4430b8ec47c1.jpg" alt="">
                                     </div>
                                 </div>
@@ -152,7 +152,7 @@
                                                 <form action="{{ route('orders.store') }}" method="post">
                                                     @csrf
                                                     <input type="hidden" name="shooting_plan_id" value="{{ $ShootingPlans->id }}">
-                                                    <button type="submit">申し込み</button>
+                                                    <button type="submit" class="block text-center w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-blue-500 shadow-lg focus:outline-none hover:bg-gray-800 hover:shadow-none">申し込み</button>
                                                 </form>
                                             </div>
                                         </div>
