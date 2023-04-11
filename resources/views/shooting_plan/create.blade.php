@@ -75,12 +75,13 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="flex justify-center mt-6">
+                            <button class="bg-black hover:bg-gray-900 text-white font-medium py-3 px-6 rounded-lg shadow-lg focus:outline-none">
+                                プランを作成
+                            </button>
+                        </div>
                     </form>
-                    <div class="flex justify-center mt-6">
-                        <button class="bg-black hover:bg-gray-900 text-white font-medium py-3 px-6 rounded-lg shadow-lg focus:outline-none">
-                            プランを作成
-                        </button>
-                    </div>
+
                 </div>
             </div>
         </div>
