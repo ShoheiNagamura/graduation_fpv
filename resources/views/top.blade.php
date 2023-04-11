@@ -391,9 +391,10 @@
 </head>
 
 <body class="antialiased">
+
     <div>
         <div class="relative flex justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <p>HELLO</p>
+            <!-- <img class="w-120 h-120" src="{{ asset('images/logo-aicon.png') }}" alt=""> -->
 
             @if (Route::has('login'))
             <div class="hidden  px-6 py-4 sm:block">
@@ -417,16 +418,16 @@
                 @endauth -->
                 <!-- 一般ユーザー用 -->
                 @auth
-                <a href="{{ url('/dashboard') }}" class=" text-sm text-gray-700 dark:text-gray-500">ダッシュボード</a>
+                <a href="{{ url('/dashboard') }}" class=" text-sm text-gray-700 dark:text-gray-400">ダッシュボード</a>
                 @else
-                <a href="{{ route('login') }}" class=" font-bold text-gray-700 dark:text-gray-500">ログイン</a>
+                <a href="{{ route('login') }}" class=" font-bold text-gray-700 dark:text-gray-400">ログイン</a>
                 @if (Route::has('register'))
-                <a href="{{ route('register') }}" class=" ml-4 font-bold text-gray-700 dark:text-gray-500">新規登録</a>
+                <a href="{{ route('register') }}" class=" ml-4 font-bold text-gray-700 dark:text-gray-400">新規登録</a>
                 @endif
                 @endauth
                 <!-- パイロット用 -->
                 @auth('pilot')
-                <a href="{{ url('pilot/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">ダッシュボード</a>
+                <a href="{{ url('pilot/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-400 underline">ダッシュボード</a>
                 @endauth
             </div>
             @endif
