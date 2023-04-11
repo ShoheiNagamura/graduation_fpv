@@ -41,4 +41,13 @@
     <option value="徳島県">徳島県</option>
     <option value="香川県">香川県</option>
     <option value="愛媛県">愛媛県</option>
+    <option value="高知県">高知県</option>
+    <option value="福岡県">福岡県</option>
+    <option value="佐賀県">佐賀県</option>
+    <option value="長崎県">長崎県</option>
+    <option value="大分県">大分県</option>
+    <option value="熊本県">熊本県</option>
+    <option value="宮崎県">宮崎県</option>
+    <option value="鹿児島県">鹿児島県</option>
+    <option value="沖縄県">沖縄県</option>
 </select>
