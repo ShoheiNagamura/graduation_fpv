@@ -28,7 +28,8 @@
 
                                 <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
                                     <div class="rounded-full overflow-hidden w-15 h-15">
-                                        <img class="w-full h-full object-cover" src="https://www.logi-today.com/wp-content/uploads/2016/12/7fd1859971318b4d7b3e4430b8ec47c1.jpg" alt="">
+                                        <!-- <img class="w-full h-full object-cover" src="public/images/testpilot.jpg" alt=""> -->
+                                        <!-- <img class="w-full h-full object-cover" src="{{ asset('image/testpilot.jpg') }}" alt="パイロット画像"> -->
                                     </div>
                                 </div>
                             </div>
