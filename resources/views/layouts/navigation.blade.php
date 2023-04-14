@@ -5,18 +5,19 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('user_dashboard') }}">
+                    <h1 class="text-white text-xl">FPV Connect</h1>
+                    <!-- <a href="{{ route('user_dashboard') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
-                    </a>
+                    </a> -->
                 </div>
 
                 <!-- Navigation Links -->
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('pilot_list.index')" :active="request()->routeIs('pilot_list.index')">
                         {{ __('作品 (パイロットリスト)') }}
                     </x-nav-link>
-                </div>
+                </div> -->
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('user_dashboard')" :active="request()->routeIs('user_dashboard')">
