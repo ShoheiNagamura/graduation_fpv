@@ -13,11 +13,11 @@
 
                 <!-- Navigation Links -->
 
-                <!-- <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('pilot_list.index')" :active="request()->routeIs('pilot_list.index')">
                         {{ __('作品 (パイロットリスト)') }}
                     </x-nav-link>
-                </div> -->
+                </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('user_dashboard')" :active="request()->routeIs('user_dashboard')">
