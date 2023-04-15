@@ -21,7 +21,7 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('user_dashboard')" :active="request()->routeIs('user_dashboard')">
-                        {{ __('ダッシュボード') }}
+                        {{ __('管理画面') }}
                     </x-nav-link>
                 </div>
             </div>
