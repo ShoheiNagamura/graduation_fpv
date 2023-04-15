@@ -33,7 +33,7 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('pilot.pilot_dashboard')" :active="request()->routeIs('pilot.pilot_dashboard')">
-                        {{ __('ダッシュボード') }}
+                        {{ __('管理画面') }}
                     </x-nav-link>
                 </div>
             </div>
