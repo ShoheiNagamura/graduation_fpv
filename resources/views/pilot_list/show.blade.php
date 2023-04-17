@@ -15,28 +15,25 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="mb-6">
                         <div class="mb-8">
-                            <h2 class="mb-6 uppercase font-bold text-center text-grey-darkest">パイロット詳細</h2>
+                            <h2 class="mb-6 uppercase text-xl font-bold text-center text-grey-darkest">パイロット詳細</h2>
                             <div class="flex flex-wrap w-full mb-8">
-                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
-                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">氏名：{{$pilot->name}}({{$pilot->age}})</p>
-                                    <img src="{{ asset('storage/' . $user->user_image) }}">
-
-                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</p>
+                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-3/5 px-4">
+                                    <p class="text-left font-bold text-lg text-grey-dark">名前</p>
+                                    <p class="m-6 text-lg">{{$pilot->name}}({{$pilot->age}})</p>
+                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点</p>
+                                    <p class="m-6 text-lg">{{$pilot->work_area}}</p>
                                     <p class="text-left font-bold text-lg text-grey-dark">PRメッセージ</p>
-                                    <p class="text-lg mb-4"> {{$pilot->message_pr}}</p>
+                                    <p class="text-lg m-6"> {{$pilot->message_pr}}</p>
                                     <p class="text-left font-bold text-lg text-grey-dark">実績</p>
-                                    <p class="text-lg mb-6">{{$pilot->achievement}}</p>
+                                    <p class="text-lg m-6">{{$pilot->achievement}}</p>
                                 </div>
 
-                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
-                                    <div class="rounded-full overflow-hidden w-15 h-15">
-                                        <!-- <img class="w-full h-full object-cover" src="public/images/testpilot.jpg" alt=""> -->
-                                        <!-- <img class="w-full h-full object-cover" src="{{ asset('image/testpilot.jpg') }}" alt="パイロット画像"> -->
-                                    </div>
+                                <div class="sm:w-1/2 md:w-1/2 lg:w-2/5">
+                                    <img class="rounded-full overflow-hidden w-300 h-300" src=" {{ asset('storage/' . $pilot->user_image) }}">
                                 </div>
                             </div>
 
-                            <h2 class="mb-6 uppercase font-bold text-center text-grey-darkest">作品</h2>
+                            <h2 class="mb-6 uppercase font-bold text-xl text-center text-grey-darkest">作品</h2>
                             <div class="flex flex-wrap -mx-2 mt-6">
                                 @foreach ($pilot->pilotPortfolios as $portfolio)
                                 <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 px-4 mb-8"><iframe width="400" height="245" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
@@ -44,7 +41,7 @@
                             </div>
                         </div>
 
-                        <h2 class="mt-8 mb-4 uppercase font-bold text-center text-lg text-grey-darkest border-b-2 border-fuchsia-600">プラン一覧</h2>
+                        <h2 class="mt-8 mb-4 uppercase font-bold text-center text-xl text-grey-darkest border-b-2 border-fuchsia-600">プラン一覧</h2>
 
                         <div class="flex flex-wrap -mx-2">
                             @foreach ($pilot->pilotShootingPlans as $ShootingPlans)
@@ -100,24 +97,27 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="mb-6">
                         <div class="mb-8">
-                            <h2 class="mb-6 uppercase font-bold text-center text-grey-darkest">パイロット詳細</h2>
+                            <h2 class="mb-6 uppercase font-bold text-center text-xl  text-grey-darkest">パイロット詳細</h2>
                             <div class="flex flex-wrap w-full mb-8">
-                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
-                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">氏名：{{$pilot->name}}({{$pilot->age}})</p>
-                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</p>
+                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-3/5 px-4">
+                                    <p class="text-left font-bold text-lg text-grey-dark">名前</p>
+                                    <p class="m-6 text-lg">{{$pilot->name}}({{$pilot->age}})</p>
+                                    <p class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点</p>
+                                    <p class="m-6 text-lg">{{$pilot->work_area}}</p>
                                     <p class="text-left font-bold text-lg text-grey-dark">PRメッセージ</p>
-                                    <p class="text-lg mb-4"> {{$pilot->message_pr}}</p>
+                                    <p class="text-lg m-6"> {{$pilot->message_pr}}</p>
                                     <p class="text-left font-bold text-lg text-grey-dark">実績</p>
-                                    <p class="text-lg mb-6">{{$pilot->achievement}}</p>
+                                    <p class="text-lg m-6">{{$pilot->achievement}}</p>
                                 </div>
 
-                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
-                                    <div class="rounded-full overflow-hidden w-15 h-15">
-                                        <img class="w-full h-full object-cover" src="https://www.logi-today.com/wp-content/uploads/2016/12/7fd1859971318b4d7b3e4430b8ec47c1.jpg" alt="">
-                                    </div>
+
+                                <div class="sm:w-1/2 md:w-1/2 lg:w-2/5">
+                                    <img class="rounded-full overflow-hidden w-300 h-300" src=" {{ asset('storage/' . $pilot->user_image) }}">
                                 </div>
                             </div>
 
+
+                            <h2 class="mb-6 uppercase font-bold text-xl text-center text-grey-darkest">作品</h2>
                             <div class="flex flex-wrap -mx-2 mt-6">
                                 @foreach ($pilot->pilotPortfolios as $portfolio)
                                 <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 px-4 mb-8"><iframe width="400" height="245" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
@@ -125,7 +125,7 @@
                             </div>
                         </div>
 
-                        <h2 class="mb-4 uppercase font-bold text-center text-lg text-grey-darkest border-b-2 border-fuchsia-600">プラン一覧</h2>
+                        <h2 class="mb-4 uppercase font-bold text-center text-xl text-grey-darkest border-b-2 border-fuchsia-600">プラン一覧</h2>
 
                         <div class="flex flex-wrap -mx-2">
                             @foreach ($pilot->pilotShootingPlans as $ShootingPlans)
