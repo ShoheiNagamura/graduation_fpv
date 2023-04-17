@@ -120,7 +120,7 @@
                             <h2 class="mb-6 uppercase font-bold text-xl text-center text-grey-darkest">作品</h2>
                             <div class="flex flex-wrap -mx-2 mt-6">
                                 @foreach ($pilot->pilotPortfolios as $portfolio)
-                                <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 px-4 mb-8"><iframe width="400" height="245" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                                <div class="  w-full sm:w-1/2 md:w-1/2 lg:w-1/3 px-4 mb-8"><iframe width="400" height="245" src="{{$portfolio->portfolio_url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
                                 @endforeach
                             </div>
                         </div>
