@@ -19,6 +19,8 @@
                             <div class="flex flex-wrap w-full mb-8">
                                 <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 px-4 mb-8">
                                     <p class="text-left mb-4 font-bold text-lg text-grey-dark">氏名：{{$pilot->name}}({{$pilot->age}})</p>
+                                    <img src="{{ asset('storage/' . $user->user_image) }}">
+
                                     <p class="text-left mb-4 font-bold text-lg text-grey-dark">活動拠点：{{$pilot->work_area}}</p>
                                     <p class="text-left font-bold text-lg text-grey-dark">PRメッセージ</p>
                                     <p class="text-lg mb-4"> {{$pilot->message_pr}}</p>

@@ -13,12 +13,22 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('pilot.profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('pilot.profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
 
+
+        <img src="{{ asset('storage/' . $user->user_image) }}">
+
+
         <div>
-            <x-input-label for="name" :value="__('お名前')" />
+            <label for="user_icon">{{ __('ユーザー画像') }}</label>
+            <input type="file" name="user_icon" id="user_icon">
+        </div>
+
+
+        <div>
+            <x-input-label for=" name" :value="__('お名前')" />
             <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
@@ -31,7 +41,11 @@
             <x-input-label class="mt-4" for="age" :value="__('年齢')" />
             <x-text-input id="age" name="age" type="number" class="mt-1 block w-full" :value="old('age', $user->age)" required autocomplete="age" />
 
+            <!-- <x-input-label class="mt-4" for="work_area" :value="__('活動拠点')" />
+            <x-select-input id="work_area" name="work_area" class="mt-1 block w-full" :value="old('work_area', $user->work_area)" required autocomplete="work_area" /> -->
+
             <x-input-label class="mt-4" for="work_area" :value="__('活動拠点')" />
+            <p class="text-white pt-2">{{ $user->work_area}}</p>
             <x-select-input id="work_area" name="work_area" class="mt-1 block w-full" :value="old('work_area', $user->work_area)" required autocomplete="work_area" />
 
             <x-input-label class="mt-4" for="message_pr" :value="__('PR Message')" />
