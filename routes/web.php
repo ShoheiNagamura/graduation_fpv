@@ -70,6 +70,12 @@ Route::prefix('pilot')->name('pilot.')->group(function () {
         //発注用プランのルーティング
         Route::resource('pilot_dashboard/shooting_plan', ShootingPlanController::class);
 
+        // 受注用プラン
+        Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
+        Route::delete('orders/{id}', [OrderController::class, 'destroy'])->name('orders.destroy');
+        // Route::delete('orders', [OrderController::class, 'destroy'])->name('orders.destroy');
+
+
         // ポートフォリオ用
         Route::resource('pilot_dashboard/portfolio', PortfolioController::class);
     });

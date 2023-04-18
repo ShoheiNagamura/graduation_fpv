@@ -101,5 +101,7 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+        $result = Order::find($id)->delete();
+        return redirect()->route('pilot.pilot_dashboard');
     }
 }
