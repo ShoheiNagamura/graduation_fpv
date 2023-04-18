@@ -25,7 +25,7 @@
                         <th class="text-center py-2 px-4">お申し込み者</th>
                         <th class="text-center py-2 px-4">受注日</th>
                         <th class="text-center py-2 px-4">ステータス</th>
-                        <th class="text-center py-2 px-4">備考</th>
+                        <th class="text-center py-2 px-4"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,7 +45,17 @@
                             <span class="bg-green-100 rounded-full py-1 px-2 text-green-800">完了</span>
                             @endif
                         </td>
-                        <td class="py-2 px-4">{{ $order->remarks }}</td>
+                        <!-- <td class="py-2 px-4">{{ $order->remarks }}</td> -->
+                        <td class="py-2 px-4">
+                            <!-- 削除ボタン -->
+                            <form action="{{ route('pilot.orders.destroy',$order->id) }}" method="POST" class="w-2/3 text-center mt-2">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="rounded-md text-sm hover:shadow-none bg-red-400 text-center text-white  py-2 px-8 focus:outline-none focus:shadow-outline">
+                                    キャンセル
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                     @endif
                     @endforeach
